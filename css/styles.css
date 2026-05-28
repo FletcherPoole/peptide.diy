@@ -216,6 +216,8 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 .card .card-link:hover{gap:.6rem;color:var(--accent2)}
 .card .card-link.coming-soon{
   pointer-events:none;cursor:default;opacity:.65;color:var(--text2);
+  display:inline-flex;align-items:center;gap:.3rem;margin-top:1.2rem;
+  font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
 }
 .card .card-link.coming-soon:hover{gap:.3rem;color:var(--text2)}
 
