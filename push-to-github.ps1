@@ -14,7 +14,7 @@ if ($auth -notmatch "Logged in") {
     & $gh auth login -h github.com -p https -w
 }
 
-$repo = "peptide-diy"
+$repo = "peptide.diy"
 $exists = & $gh repo view $repo 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Host "`nCreating github.com/$repo and pushing...`n"

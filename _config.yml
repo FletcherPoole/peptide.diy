@@ -1,6 +1,6 @@
 title: peptide.diy
 description: Peptide dosage protocols, reconstitution guides, and research dosing schedules.
-baseurl: "/peptide-diy"
+baseurl: "/peptide.diy"
 url: ""
 
 # User/org site at username.github.io (no repo path): set baseurl to ""
