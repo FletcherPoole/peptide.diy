@@ -214,6 +214,10 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
   color:var(--accent);
 }
 .card .card-link:hover{gap:.6rem;color:var(--accent2)}
+.card .card-link.coming-soon{
+  pointer-events:none;cursor:default;opacity:.65;color:var(--text2);
+}
+.card .card-link.coming-soon:hover{gap:.3rem;color:var(--text2)}
 
 /* ── WHY SECTION ── */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
