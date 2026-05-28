@@ -286,6 +286,18 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 .calc-total-label{font-family:var(--font-mono);font-size:.7rem;color:var(--text3);margin-bottom:.2rem;letter-spacing:.06em;text-transform:uppercase}
 .calc-total-val{font-family:var(--font-head);font-size:1.4rem;color:var(--accent2)}
 .calc-notes{font-size:.85rem;color:var(--text2);max-width:400px;margin:0}
+.calc-method-panel{
+  margin-top:1.25rem;padding:1.25rem;background:var(--bg4);
+  border:1px solid var(--border);border-radius:var(--r2);
+}
+.calc-method-info{
+  font-size:.88rem;color:var(--text2);line-height:1.6;margin-bottom:1rem;
+}
+.calc-method-info strong{
+  display:block;margin-bottom:.35rem;color:var(--accent);
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.calc-field-hint{font-size:.8rem;color:var(--text3);margin:.45rem 0 0;line-height:1.5}
 .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .res-box{text-align:center;padding:1rem;background:var(--bg3);border-radius:var(--r2)}
 .res-val{font-family:var(--font-head);font-size:1.8rem;font-weight:700;color:var(--accent)}
