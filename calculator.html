@@ -5,108 +5,191 @@ description: "Free peptide reconstitution calculator. Enter vial size, BAC water
 ---
 
 
-  <div class="content-hero">
+  <div class="content-hero content-hero--compact">
     <div class="container">
       <div class="breadcrumb"><a href="{{ '/index.html' | relative_url }}">Home</a><span>›</span><span>Calculator</span></div>
       <div class="eyebrow">Check Your Maths</div>
       <h1>Peptide Dosage Calculator</h1>
-      <p>Enter vial size, BAC water, and target dose — get concentration, draw volume, syringe units, and total doses instantly.</p>
+      <p>Reconstitution math in real time — concentration, draw volume, syringe units, and doses per vial.</p>
     </div>
   </div>
-  <div class="content-body">
-    <div class="container">
-      <div style="max-width:700px">
-        <div class="calc-wrapper">
-          <h3 style="margin-bottom:1.5rem;font-size:1.3rem">Reconstitution Calculator</h3>
-          <form id="calc-form" class="calc-form" novalidate>
-            <div class="calc-grid">
-              <div>
-                <div class="form-group">
-                  <label for="c-pep-amount">Peptide amount (in vial)</label>
-                  <div class="input-group">
-                    <input type="number" id="c-pep-amount" placeholder="e.g. 5" step="any" min="0" inputmode="decimal" required>
-                    <select id="c-pep-unit" aria-label="Peptide amount unit">
-                      <option value="mg">mg</option>
-                      <option value="mcg">mcg</option>
-                      <option value="IU">IU</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="c-bac-water">BAC water added (mL)</label>
-                  <input type="number" id="c-bac-water" placeholder="e.g. 2" step="any" min="0" inputmode="decimal" required>
-                </div>
-              </div>
-              <div>
-                <div class="form-group">
-                  <label for="c-dose">Target dose per injection</label>
-                  <div class="input-group">
-                    <input type="number" id="c-dose" placeholder="e.g. 250" step="any" min="0" inputmode="decimal" required>
-                    <select id="c-dose-unit" aria-label="Dose unit">
-                      <option value="mcg">mcg</option>
-                      <option value="mg">mg</option>
-                      <option value="IU">IU</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="c-syringe">Syringe scale</label>
-                  <select id="c-syringe">
-                    <option value="100">U-100 (standard)</option>
-                    <option value="50">U-50</option>
-                    <option value="20">U-20</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="c-syringe-vol">Syringe size (mL)</label>
-                  <select id="c-syringe-vol">
-                    <option value="1">1.0 mL (100 units on U-100)</option>
-                    <option value="0.5">0.5 mL (50 units on U-100)</option>
-                    <option value="0.3">0.3 mL (30 units on U-100)</option>
-                  </select>
-                </div>
+
+  <div class="content-body calc-page">
+    <div class="container container-wide">
+
+      <div class="calc-app">
+        <form id="calc-form" class="calc-form" novalidate>
+
+          <!-- ── INPUTS ── -->
+          <div class="calc-panel calc-inputs">
+            <div class="calc-panel-head">
+              <h2>Your setup</h2>
+              <p>Fill in the four values below. Results update automatically.</p>
+            </div>
+
+            <div class="calc-presets" role="group" aria-label="Quick presets">
+              <span class="calc-presets-label">Quick fill</span>
+              <div class="calc-preset-row">
+                <button type="button" class="calc-preset" data-preset="ghk">GHK-Cu 50mg</button>
+                <button type="button" class="calc-preset" data-preset="reta">Retatrutide 10mg</button>
+                <button type="button" class="calc-preset" data-preset="standard">5mg / 250mcg</button>
+                <button type="button" class="calc-preset" data-preset="hgh">HGH 10 IU</button>
               </div>
             </div>
+
+            <div class="calc-steps">
+
+              <section class="calc-step">
+                <div class="calc-step-icon">1</div>
+                <div class="calc-step-body">
+                  <h3>Vial contents</h3>
+                  <p class="calc-hint">Total peptide in the lyophilized vial before reconstitution.</p>
+                  <div class="calc-field-row">
+                    <input type="number" id="c-pep-amount" class="calc-input calc-input--lg" placeholder="5" step="any" min="0" inputmode="decimal" required>
+                    <div class="calc-unit-toggle" role="group" aria-label="Vial amount unit">
+                      <label class="calc-unit-opt"><input type="radio" name="c-pep-unit" value="mg" checked><span>mg</span></label>
+                      <label class="calc-unit-opt"><input type="radio" name="c-pep-unit" value="mcg"><span>mcg</span></label>
+                      <label class="calc-unit-opt"><input type="radio" name="c-pep-unit" value="IU"><span>IU</span></label>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="calc-step">
+                <div class="calc-step-icon">2</div>
+                <div class="calc-step-body">
+                  <h3>BAC water</h3>
+                  <p class="calc-hint">Milliliters of bacteriostatic water added to the vial.</p>
+                  <div class="calc-field-row calc-field-row--suffix">
+                    <input type="number" id="c-bac-water" class="calc-input calc-input--lg" placeholder="2" step="any" min="0" inputmode="decimal" required>
+                    <span class="calc-suffix">mL</span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="calc-step">
+                <div class="calc-step-icon">3</div>
+                <div class="calc-step-body">
+                  <h3>Dose per injection</h3>
+                  <p class="calc-hint">Target amount per shot — match mg/mcg or IU to your vial.</p>
+                  <div class="calc-field-row">
+                    <input type="number" id="c-dose" class="calc-input calc-input--lg" placeholder="250" step="any" min="0" inputmode="decimal" required>
+                    <div class="calc-unit-toggle" role="group" aria-label="Dose unit">
+                      <label class="calc-unit-opt"><input type="radio" name="c-dose-unit" value="mcg" checked><span>mcg</span></label>
+                      <label class="calc-unit-opt"><input type="radio" name="c-dose-unit" value="mg"><span>mg</span></label>
+                      <label class="calc-unit-opt"><input type="radio" name="c-dose-unit" value="IU"><span>IU</span></label>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="calc-step">
+                <div class="calc-step-icon">4</div>
+                <div class="calc-step-body">
+                  <h3>Syringe</h3>
+                  <p class="calc-hint">Match your insulin syringe for accurate unit readout.</p>
+                  <div class="calc-field-grid">
+                    <div class="form-group" style="margin:0">
+                      <label for="c-syringe">Scale</label>
+                      <select id="c-syringe" class="calc-select">
+                        <option value="100">U-100 (standard)</option>
+                        <option value="50">U-50</option>
+                        <option value="20">U-20</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="margin:0">
+                      <label for="c-syringe-vol">Barrel size</label>
+                      <select id="c-syringe-vol" class="calc-select">
+                        <option value="1">1.0 mL</option>
+                        <option value="0.5">0.5 mL</option>
+                        <option value="0.3">0.3 mL</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
             <p id="c-error" class="calc-error" hidden role="alert"></p>
-            <button type="submit" class="btn btn-primary" style="width:100%">Calculate dosage</button>
-          </form>
-          <div class="calc-result" id="c-result" role="region" aria-live="polite" aria-label="Calculation results">
-            <div class="result-grid">
-              <div class="res-box">
-                <div class="res-val" id="c-res-conc">—</div>
-                <div class="res-unit" id="c-res-conc-u">concentration</div>
-              </div>
-              <div class="res-box">
-                <div class="res-val" id="c-res-vol">—</div>
-                <div class="res-unit">mL per dose</div>
-              </div>
-              <div class="res-box">
-                <div class="res-val" id="c-res-units">—</div>
-                <div class="res-unit" id="c-res-syringe-label">syringe units</div>
-              </div>
+          </div>
+
+          <!-- ── OUTPUT ── -->
+          <div class="calc-panel calc-output">
+            <div class="calc-panel-head">
+              <h2>Your draw</h2>
+              <p id="c-output-sub">Enter values on the left to see results.</p>
             </div>
-            <div class="calc-result-footer">
-              <div class="calc-total-doses">
-                <div class="calc-total-label">Total doses</div>
-                <div class="calc-total-val" id="c-res-doses">—</div>
+
+            <div class="calc-output-empty" id="c-empty">
+              <div class="calc-empty-icon">⚗</div>
+              <p>Add your vial size, BAC water, and dose to calculate draw volume and syringe units.</p>
+            </div>
+
+            <div class="calc-output-active" id="c-result" hidden role="region" aria-live="polite" aria-label="Calculation results">
+
+              <div class="calc-hero-result">
+                <div class="calc-hero-label">Pull to this mark</div>
+                <div class="calc-hero-value">
+                  <span id="c-res-units">—</span>
+                  <span class="calc-hero-unit" id="c-res-syringe-label">units</span>
+                </div>
+                <div class="calc-hero-sub" id="c-res-vol">— mL per dose</div>
               </div>
-              <p id="c-res-notes" class="calc-notes"></p>
+
+              <div class="calc-syringe-viz" aria-hidden="true">
+                <div class="calc-syringe-barrel">
+                  <div class="calc-syringe-plunger"></div>
+                  <div class="calc-syringe-fill" id="c-syringe-fill"></div>
+                  <div class="calc-syringe-needle"></div>
+                </div>
+                <div class="calc-syringe-scale">
+                  <span>0</span>
+                  <span id="c-syringe-mid">50</span>
+                  <span id="c-syringe-max-label">100</span>
+                </div>
+              </div>
+
+              <div class="calc-stats-row">
+                <div class="calc-stat">
+                  <div class="calc-stat-val" id="c-res-conc">—</div>
+                  <div class="calc-stat-label">Concentration</div>
+                </div>
+                <div class="calc-stat calc-stat--highlight">
+                  <div class="calc-stat-val" id="c-res-doses">—</div>
+                  <div class="calc-stat-label">Doses per vial</div>
+                </div>
+                <div class="calc-stat">
+                  <div class="calc-stat-val" id="c-res-vol-stat">—</div>
+                  <div class="calc-stat-label">mL per dose</div>
+                </div>
+              </div>
+
+              <div class="calc-formula" id="c-formula"></div>
+              <div class="calc-warnings" id="c-res-notes"></div>
+
             </div>
           </div>
-        </div>
-        <div style="margin-top:2rem">
-          <h3 style="margin-bottom:1rem">How to use</h3>
-          <ol class="steps">
-            <li><div class="step-num">1</div><div class="step-content"><h4>Enter vial amount</h4><p>What's on the label — mg, mcg, or IU (use IU for both fields when dosing HGH/HCG in units).</p></div></li>
-            <li><div class="step-num">2</div><div class="step-content"><h4>Add BAC water volume</h4><p>Milliliters of bacteriostatic water added (or planned) for reconstitution.</p></div></li>
-            <li><div class="step-num">3</div><div class="step-content"><h4>Set target dose</h4><p>How much you want per injection, in the same unit family as the vial (mg/mcg or IU).</p></div></li>
-            <li><div class="step-num">4</div><div class="step-content"><h4>Pick syringe settings</h4><p>Match your insulin syringe scale (U-100 is most common) and barrel size for accurate warnings.</p></div></li>
-          </ol>
-        </div>
-        <div class="callout" style="margin-top:2rem">
-          <strong>Missing a compound?</strong>
-          <a href="{{ '/contact.html' | relative_url }}">Request one to be added</a>, or use this calculator to build your own protocol.
+
+        </form>
+      </div>
+
+      <div class="calc-below">
+        <div class="calc-below-grid">
+          <div>
+            <h3>How the math works</h3>
+            <ol class="steps">
+              <li><div class="step-num">1</div><div class="step-content"><h4>Concentration</h4><p>Divide total peptide by BAC water volume → mg/mL (or IU/mL).</p></div></li>
+              <li><div class="step-num">2</div><div class="step-content"><h4>Draw volume</h4><p>Divide your dose by concentration → mL to pull per injection.</p></div></li>
+              <li><div class="step-num">3</div><div class="step-content"><h4>Syringe units</h4><p>Multiply mL by your syringe scale (U-100: 1 mL = 100 units).</p></div></li>
+            </ol>
+          </div>
+          <div class="callout">
+            <strong>Missing a compound?</strong>
+            <a href="{{ '/contact.html' | relative_url }}">Request one to be added</a>, or use this calculator to build your own protocol.
+          </div>
         </div>
       </div>
+
     </div>
   </div>
