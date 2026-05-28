@@ -1,0 +1,102 @@
+---
+layout: default
+title: "Dosage Calculator"
+---
+
+  <div class="content-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="{{ '/index.html' | relative_url }}">Home</a><span>›</span><span>Dosage Calculator</span></div>
+      <div class="eyebrow">Tool</div>
+      <h1>Peptide Dosage Calculator</h1>
+      <p>Enter your vial size, BAC water volume, and target dose — get exact syringe volumes instantly.</p>
+    </div>
+  </div>
+  <div class="content-body">
+    <div class="container">
+      <div style="max-width:700px">
+        <div class="calc-wrapper">
+          <h3 style="margin-bottom:1.5rem;font-size:1.3rem">Reconstitution Calculator</h3>
+          <div class="calc-grid">
+            <div>
+              <div class="form-group">
+                <label>Peptide Amount (in vial)</label>
+                <div class="input-group">
+                  <input type="number" id="c-pep-amount" placeholder="e.g. 5" step="any" min="0">
+                  <select id="c-pep-unit">
+                    <option value="mg">mg</option>
+                    <option value="mcg">mcg</option>
+                    <option value="IU">IU</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>BAC Water Added (mL)</label>
+                <input type="number" id="c-bac-water" placeholder="e.g. 2" step="any" min="0">
+              </div>
+            </div>
+            <div>
+              <div class="form-group">
+                <label>Target Dose Per Injection</label>
+                <div class="input-group">
+                  <input type="number" id="c-dose" placeholder="e.g. 250" step="any" min="0">
+                  <select id="c-dose-unit">
+                    <option value="mcg">mcg</option>
+                    <option value="mg">mg</option>
+                    <option value="IU">IU</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Syringe Type</label>
+                <select id="c-syringe">
+                  <option value="100">U-100 (standard)</option>
+                  <option value="50">U-50</option>
+                  <option value="20">U-20</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" style="width:100%" onclick="calcFull()">Calculate Dosage</button>
+          <div class="calc-result" id="c-result">
+            <div class="result-grid">
+              <div class="res-box">
+                <div class="res-val" id="c-res-conc">—</div>
+                <div class="res-unit" id="c-res-conc-u">concentration</div>
+              </div>
+              <div class="res-box">
+                <div class="res-val" id="c-res-vol">—</div>
+                <div class="res-unit">mL per dose</div>
+              </div>
+              <div class="res-box">
+                <div class="res-val" id="c-res-units">—</div>
+                <div class="res-unit" id="c-res-syringe-label">syringe units</div>
+              </div>
+            </div>
+            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem">
+              <div style="text-align:center">
+                <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--text3);margin-bottom:.2rem">TOTAL DOSES</div>
+                <div style="font-family:var(--font-head);font-size:1.4rem;color:var(--accent2)" id="c-res-doses">—</div>
+              </div>
+              <div id="c-res-notes" style="font-size:.85rem;color:var(--text2);max-width:400px;display:flex;align-items:center"></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:2rem">
+          <h3 style="margin-bottom:1rem">Calculator Steps</h3>
+          <ol class="steps">
+            <li><div class="step-num">1</div><div class="step-content"><h4>Enter the total peptide amount</h4><p>This is what's printed on the vial label (mg, mcg, or IU).</p></div></li>
+            <li><div class="step-num">2</div><div class="step-content"><h4>Specify the BAC water volume</h4><p>The mL of bacteriostatic water you plan to add (or already added) to the vial.</p></div></li>
+            <li><div class="step-num">3</div><div class="step-content"><h4>Enter your target dose per injection</h4><p>The amount you want to inject each time, in the units your protocol specifies.</p></div></li>
+            <li><div class="step-num">4</div><div class="step-content"><h4>Click Calculate</h4><p>The calculator outputs the exact injection volume in mL and syringe units, plus the total number of doses in the vial.</p></div></li>
+          </ol>
+        </div>
+        <div class="callout" style="margin-top:2rem">
+          <strong>Need a custom protocol?</strong>
+          If you'd like a full dosage protocol page created for a specific peptide, <a href="{{ '/contact.html' | relative_url }}">contact us</a> and we'll add it to our library.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ PAGE: PROTOCOLS PAGES -->

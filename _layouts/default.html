@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+<title>{% if page.title == 'Home' %}peptide.diy — Practical Peptide Research & Dosage Protocols{% else %}{{ page.title }} — peptide.diy{% endif %}</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+</head>
+<body>
+{% include nav.html %}
+{% include mobile-nav.html %}
+<main>
+{{ content }}
+</main>
+{% include footer.html %}
+<script src="{{ '/js/app.js' | relative_url }}"></script>
+</body>
+</html>

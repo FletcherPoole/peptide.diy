@@ -1,0 +1,56 @@
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="{{ '/index.html' | relative_url }}">
+      peptide<span>.diy</span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <button class="nav-btn">
+          Protocols
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+        </button>
+        <div class="dropdown">
+          <a class="dd-link" href="{{ '/single-peptides.html' | relative_url }}">Single Peptides</a>
+          <a class="dd-link" href="{{ '/blends.html' | relative_url }}">Peptide Blends</a>
+          <a class="dd-link" href="{{ '/stacks.html' | relative_url }}">Peptide Stacks</a>
+          <hr class="dd-divider">
+          <a class="dd-link" href="{{ '/calculator.html' | relative_url }}">⚗ Dosage Calculator</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn">
+          Learn
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+        </button>
+        <div class="dropdown">
+          <a class="dd-link" href="{{ '/beginners-guide.html' | relative_url }}">Beginner's Guide</a>
+          <a class="dd-link" href="{{ '/reconstitution-guide.html' | relative_url }}">Reconstitution Guide</a>
+          <a class="dd-link" href="{{ '/syringe-guide.html' | relative_url }}">Syringe & Measurement</a>
+          <a class="dd-link" href="{{ '/storage-guide.html' | relative_url }}">Storage Guide</a>
+          <hr class="dd-divider">
+          <a class="dd-link" href="{{ '/blog.html' | relative_url }}">Blog</a>
+          <a class="dd-link" href="{{ '/glossary.html' | relative_url }}">Glossary</a>
+          <a class="dd-link" href="{{ '/faq.html' | relative_url }}">FAQ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn">
+          About
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+        </button>
+        <div class="dropdown">
+          <a class="dd-link" href="{{ '/about.html' | relative_url }}">About Us</a>
+          <a class="dd-link" href="{{ '/editorial-policy.html' | relative_url }}">Editorial Policy</a>
+          <a class="dd-link" href="{{ '/contact.html' | relative_url }}">Contact Us</a>
+        </div>
+      </div>
+      <a class="nav-cta" href="{{ '/calculator.html' | relative_url }}">Calculator</a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
