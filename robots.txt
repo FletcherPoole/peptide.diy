@@ -1,0 +1,9 @@
+# peptide.diy — https://fletcherpoole.github.io/peptide.diy/
+User-agent: *
+Allow: /
+
+# Block build/dev artifacts if ever exposed
+Disallow: /split_pages.py
+Disallow: /fix_proto_cards.py
+
+Sitemap: https://fletcherpoole.github.io/peptide.diy/sitemap.xml
