@@ -287,9 +287,21 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 .calc-total-val{font-family:var(--font-head);font-size:1.4rem;color:var(--accent2)}
 .calc-notes{font-size:.85rem;color:var(--text2);max-width:400px;margin:0}
 .calc-method-panel{
-  margin-top:1.25rem;padding:1.25rem;background:var(--bg4);
-  border:1px solid var(--border);border-radius:var(--r2);
+  max-height:0;overflow:hidden;opacity:0;
+  margin:0;padding:0 1.25rem;
+  background:var(--bg4);border:1px solid transparent;border-radius:var(--r2);
+  transition:max-height .35s ease,opacity .25s ease,margin .25s ease,padding .25s ease,border-color .25s ease;
 }
+.calc-method-panel.is-open{
+  max-height:420px;opacity:1;
+  margin-top:1.25rem;margin-bottom:.25rem;padding:1.25rem;
+  border-color:var(--border2);
+}
+.calc-method-panel.is-open:has(.calc-method-tip){max-height:520px}
+.calc-method-fields{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;
+}
+.calc-method-field{margin-bottom:0}
 .calc-method-info{
   font-size:.88rem;color:var(--text2);line-height:1.6;margin-bottom:1rem;
 }
@@ -298,6 +310,17 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
   font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
 }
 .calc-field-hint{font-size:.8rem;color:var(--text3);margin:.45rem 0 0;line-height:1.5}
+.calc-method-tip{
+  margin:1rem 0 0;padding:.85rem 1rem;border-radius:var(--r2);
+  background:rgba(94,246,200,0.06);border:1px solid rgba(94,246,200,0.15);
+  font-size:.82rem;color:var(--text2);line-height:1.55;
+}
+.calc-method-tip strong{color:var(--text)}
+@media(max-width:640px){
+  .calc-method-fields{grid-template-columns:1fr}
+  .calc-method-panel.is-open{max-height:560px}
+  .calc-method-panel.is-open:has(.calc-method-tip){max-height:640px}
+}
 .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .res-box{text-align:center;padding:1rem;background:var(--bg3);border-radius:var(--r2)}
 .res-val{font-family:var(--font-head);font-size:1.8rem;font-weight:700;color:var(--accent)}

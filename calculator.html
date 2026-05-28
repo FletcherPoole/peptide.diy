@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dosage Calculator"
-description: "Peptide reconstitution calculator for injections, topical creams in moisturiser, and nasal sprays — concentration, volumes, and doses per vial."
+description: "Calculate the right dose for injections, moisturisers, and nasal sprays — pick a method, enter your numbers, and get concentration, volume, and doses per vial."
 ---
 
 
@@ -10,7 +10,7 @@ description: "Peptide reconstitution calculator for injections, topical creams i
       <div class="breadcrumb"><a href="{{ '/index.html' | relative_url }}">Home</a><span>›</span><span>Calculator</span></div>
       <div class="eyebrow">Check Your Maths</div>
       <h1>Peptide Dosage Calculator</h1>
-      <p>Reconstitution math for injections, moisturiser creams, and nasal sprays — pick your method and enter your numbers.</p>
+      <p>Calculate the right amount for a dose with injections, moisturisers, and nasal sprays. Just pick a method and fill out the rest of the fields.</p>
     </div>
   </div>
 
@@ -26,6 +26,40 @@ description: "Peptide reconstitution calculator for injections, topical creams i
               <option value="cream">Topical cream (moisturiser)</option>
               <option value="nasal">Nasal spray</option>
             </select>
+          </div>
+
+          <div id="c-panel-cream" class="calc-method-panel" aria-hidden="true">
+            <div class="calc-method-info">
+              <strong>Topical cream</strong>
+              Reconstitute with BAC water first, then blend the liquid peptide into a plain moisturiser base (common with GHK-Cu and similar). Use a sterile technique and store refrigerated.
+            </div>
+            <div class="form-group calc-method-field">
+              <label for="c-moisturiser">Moisturiser base added (g)</label>
+              <input type="number" id="c-moisturiser" placeholder="e.g. 50" step="any" min="0" inputmode="decimal">
+              <p class="calc-field-hint">Weight of plain, fragrance-free moisturiser you mix the reconstituted peptide into — not the peptide weight.</p>
+            </div>
+            <p class="calc-method-tip">
+              <strong>Pea-sized serving:</strong> Most people apply a dab about the size of a pea — roughly <strong>0.25–0.5&nbsp;g</strong> of cream per use (a fingertip unit is often ~0.5&nbsp;g). Use that as a visual guide when measuring your dose, not a syringe volume.
+            </p>
+          </div>
+
+          <div id="c-panel-nasal" class="calc-method-panel" aria-hidden="true">
+            <div class="calc-method-info">
+              <strong>Nasal spray</strong>
+              Reconstitute the peptide in BAC water, then dilute with sterile saline. Match your sprayer’s output to the dose you want per spray.
+            </div>
+            <div class="calc-method-fields">
+              <div class="form-group calc-method-field">
+                <label for="c-saline">Sterile saline added (mL)</label>
+                <input type="number" id="c-saline" placeholder="e.g. 9" step="any" min="0" inputmode="decimal">
+                <p class="calc-field-hint">Mixed in after reconstitution — total liquid = BAC water + saline.</p>
+              </div>
+              <div class="form-group calc-method-field">
+                <label for="c-spray-vol">Liquid per spray (mL)</label>
+                <input type="number" id="c-spray-vol" placeholder="e.g. 0.1" step="any" min="0" inputmode="decimal">
+                <p class="calc-field-hint">How much your nasal sprayer delivers per pump — often 0.05–0.15 mL.</p>
+              </div>
+            </div>
           </div>
 
           <div class="calc-grid">
@@ -60,30 +94,6 @@ description: "Peptide reconstitution calculator for injections, topical creams i
               </div>
               <p id="c-error" class="calc-error" hidden role="alert"></p>
               <button type="submit" class="btn btn-primary" style="width:100%">Calculate</button>
-            </div>
-          </div>
-
-          <div id="c-panel-cream" class="calc-method-panel" hidden>
-            <div class="calc-method-info">
-              <strong>Topical cream</strong>
-              Reconstitute with BAC water first, then blend the liquid peptide into a plain moisturiser base (common with GHK-Cu and similar). Use a sterile technique and store refrigerated.
-            </div>
-            <div class="form-group" style="margin-bottom:0">
-              <label for="c-moisturiser">Moisturiser base (g)</label>
-              <input type="number" id="c-moisturiser" placeholder="e.g. 50" step="any" min="0" inputmode="decimal">
-              <p class="calc-field-hint">Weight of plain, fragrance-free moisturiser you are mixing into — not the peptide weight.</p>
-            </div>
-          </div>
-
-          <div id="c-panel-nasal" class="calc-method-panel" hidden>
-            <div class="calc-method-info">
-              <strong>Nasal spray</strong>
-              Reconstitute the peptide in BAC water, then dilute with sterile saline to your target concentration. Use a clean nasal spray bottle and keep refrigerated after mixing.
-            </div>
-            <div class="form-group" style="margin-bottom:0">
-              <label for="c-saline">Sterile saline added (mL)</label>
-              <input type="number" id="c-saline" placeholder="e.g. 9" step="any" min="0" inputmode="decimal">
-              <p class="calc-field-hint">Saline mixed in after reconstitution — total liquid volume = BAC water + saline.</p>
             </div>
           </div>
 

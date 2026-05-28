@@ -114,6 +114,7 @@ function computeCream({ amountVal, amountUnit, bacWater, doseVal, doseUnit, mois
   const notes = [
     `Mix ${formatVolumeMl(bacWater)} mL reconstituted peptide into ${round1(moisturiserG)} g moisturiser.`,
     `Approx. ${round1(concMcgG)} mcg peptide per gram of final cream (including liquid volume).`,
+    `A pea-sized dab (~0.25–0.5 g) delivers roughly ${round1(concMcgG * 0.25)}–${round1(concMcgG * 0.5)} mcg peptide at this mix.`,
     "Store mixed cream refrigerated. Use clean tools — not for injection.",
   ];
 
@@ -128,39 +129,51 @@ function computeCream({ amountVal, amountUnit, bacWater, doseVal, doseUnit, mois
   };
 }
 
-function computeNasal({ amountVal, amountUnit, bacWater, doseVal, doseUnit, salineMl }) {
+function computeNasal({ amountVal, amountUnit, bacWater, doseVal, doseUnit, salineMl, sprayVolMl }) {
   if (amountUnit === "IU" || doseUnit === "IU") {
     return { error: "Nasal spray calculations use mg or mcg — not IU." };
   }
-  if ([amountVal, bacWater, doseVal, salineMl].some((v) => isNaN(v) || v <= 0)) {
-    return { error: "Enter valid positive numbers in every field, including saline volume." };
+  if ([amountVal, bacWater, doseVal, salineMl, sprayVolMl].some((v) => isNaN(v) || v <= 0)) {
+    return {
+      error: "Enter valid positive numbers in every field, including saline and liquid per spray.",
+    };
   }
 
   const amountMcg = toMcg(amountVal, amountUnit);
   const doseMcg = toMcg(doseVal, doseUnit);
   if (doseMcg > amountMcg) {
-    return { error: "Dose per spray cannot exceed total vial amount." };
+    return { error: "Target dose per spray cannot exceed total vial amount." };
   }
 
   const totalVol = bacWater + salineMl;
   const concMcgMl = amountMcg / totalVol;
-  const mLPerSpray = doseMcg / concMcgMl;
-  const totalSprays = Math.floor(amountMcg / doseMcg);
+  const mcgPerSpray = concMcgMl * sprayVolMl;
+  const totalSpraysByAmount = Math.floor(amountMcg / mcgPerSpray);
+  const totalSpraysByVol = Math.floor(totalVol / sprayVolMl);
+  const totalSprays = Math.min(totalSpraysByAmount, totalSpraysByVol);
 
   const notes = [
     `Reconstitute in ${formatVolumeMl(bacWater)} mL BAC water, then add ${formatVolumeMl(salineMl)} mL sterile saline (${formatVolumeMl(totalVol)} mL total).`,
+    `Each ${formatVolumeMl(sprayVolMl)} mL spray delivers ~${round1(mcgPerSpray)} mcg peptide at this concentration.`,
     "Use a clean nasal spray bottle. Keep refrigerated after mixing.",
   ];
 
-  if (mLPerSpray > 0.2) {
-    notes.push("Large volume per spray — check your sprayer output and consider diluting further.");
+  const doseDiff = Math.abs(mcgPerSpray - doseMcg) / doseMcg;
+  if (doseDiff > 0.1) {
+    notes.push(
+      `Your target is ${round1(doseMcg)} mcg per spray — adjust BAC water, saline, or dilution to get closer to that dose.`
+    );
+  }
+
+  if (sprayVolMl > 0.2) {
+    notes.push("Large volume per spray — double-check your sprayer output.");
   }
 
   return {
-    labels: ["Final concentration", "mL per spray", "Total sprays"],
+    labels: ["Final concentration", "Peptide per spray", "Total sprays"],
     totalLabel: "Sprays per vial",
     concText: `${round1(concMcgMl)} mcg/mL`,
-    box2: `${formatVolumeMl(mLPerSpray)} mL`,
+    box2: `${round1(mcgPerSpray)} mcg`,
     box3: String(totalSprays),
     totalDoses: totalSprays,
     notes,
@@ -188,6 +201,7 @@ function readCalcForm() {
     doseUnit: document.getElementById("c-dose-unit").value,
     moisturiserG: parseFloat(document.getElementById("c-moisturiser").value),
     salineMl: parseFloat(document.getElementById("c-saline").value),
+    sprayVolMl: parseFloat(document.getElementById("c-spray-vol").value),
   };
 }
 
@@ -242,9 +256,15 @@ function setCalcMethod(method) {
   const doseUnit = document.getElementById("c-dose-unit");
   const iuPep = pepUnit.querySelector('option[value="IU"]');
   const iuDose = doseUnit.querySelector('option[value="IU"]');
+  const resultEl = document.getElementById("c-result");
 
-  creamPanel.hidden = method !== "cream";
-  nasalPanel.hidden = method !== "nasal";
+  creamPanel.classList.toggle("is-open", method === "cream");
+  creamPanel.setAttribute("aria-hidden", method !== "cream");
+  nasalPanel.classList.toggle("is-open", method === "nasal");
+  nasalPanel.setAttribute("aria-hidden", method !== "nasal");
+
+  resultEl.classList.remove("show");
+  showCalcError(document.getElementById("c-error"), "");
 
   if (method === "injection") {
     doseLabel.textContent = "Target dose per injection";
@@ -294,14 +314,22 @@ function calcHome() {
 
 function initCalculators() {
   const methodSelect = document.getElementById("c-method");
+  const calcForm = document.getElementById("calc-form");
+
   if (methodSelect) {
     methodSelect.addEventListener("change", (e) => setCalcMethod(e.target.value));
     setCalcMethod(methodSelect.value);
   }
 
-  document.getElementById("calc-form")?.addEventListener("submit", (e) => {
+  calcForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     calcFull();
+  });
+
+  calcForm?.addEventListener("input", () => {
+    if (document.getElementById("c-result").classList.contains("show")) {
+      calcFull();
+    }
   });
 }
 
