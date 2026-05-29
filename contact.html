@@ -4,7 +4,6 @@ title: "Contact"
 description: "Contact peptide.diy: request a protocol, ask a question or send feedback. Tell us the peptide name and vial size you need covered."
 ---
 
-
   <div class="content-hero">
     <div class="container">
       <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span>›</span><span>Contact Us</span></div>
@@ -15,33 +14,48 @@ description: "Contact peptide.diy: request a protocol, ask a question or send fe
   </div>
   <div class="content-body">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div class="contact-page-grid">
         <div>
           <h3 style="margin-bottom:1.2rem">Send Us a Message</h3>
-          <div class="contact-form">
+          <form
+            id="contact-form"
+            class="contact-form"
+            method="post"
+            novalidate
+            {% if site.formspree_contact_id != blank %}
+            data-formspree-id="{{ site.formspree_contact_id }}"
+            action="https://formspree.io/f/{{ site.formspree_contact_id }}"
+            {% endif %}
+          >
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="contact-honeypot" aria-hidden="true">
+            <input type="hidden" name="_subject" id="contact-subject-hidden" value="peptide.diy contact form">
+
             <div class="form-group">
-              <label>Your Name</label>
-              <input type="text" placeholder="Name">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Name" autocomplete="name" required>
             </div>
             <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="email@example.com">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="email@example.com" autocomplete="email" required>
             </div>
             <div class="form-group">
-              <label>Subject</label>
-              <select>
-                <option>Protocol Request</option>
-                <option>Error Report</option>
-                <option>General Question</option>
-                <option>Other</option>
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject" required>
+                <option value="Protocol Request">Protocol Request</option>
+                <option value="Error Report">Error Report</option>
+                <option value="General Question">General Question</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Message</label>
-              <textarea placeholder="Describe your request or question. For protocol requests, include the peptide name and vial size."></textarea>
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Describe your request or question. For protocol requests, include the peptide name and vial size." required minlength="10"></textarea>
             </div>
-            <button class="btn btn-primary">Send Message</button>
-          </div>
+
+            <p id="contact-status" class="contact-status" role="status" aria-live="polite" hidden></p>
+
+            <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
+          </form>
         </div>
         <div>
           <h3 style="margin-bottom:1.2rem">Common Requests</h3>
@@ -63,6 +77,3 @@ description: "Contact peptide.diy: request a protocol, ask a question or send fe
       </div>
     </div>
   </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════ POLICY PAGES -->

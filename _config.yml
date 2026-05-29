@@ -4,6 +4,8 @@ lang: en_GB
 baseurl: ""
 url: "https://www.peptide.diy"
 beehiiv_form_id: "76093b0a-afea-4413-baff-6257e29dfad3"
+# Formspree form ID — create a free form at https://formspree.io and paste the ID here (the part after /f/)
+formspree_contact_id: ""
 
 plugins:
   - jekyll-sitemap
