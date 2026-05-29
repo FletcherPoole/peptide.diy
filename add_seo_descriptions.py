@@ -6,8 +6,8 @@ ROOT = Path(__file__).parent
 
 PAGES = {
     "index.html": {
-        "seo_title": "DIY Peptide Education | Science-Backed Protocols",
-        "description": "Genuine science-backed peptide protocols. Dosages, synergy, cycling, reconstitution & risks — research plus real-world insight at peptide.diy.",
+        "seo_title": "DIY Peptide Education | Research-Led Protocols",
+        "description": "Peptide protocols with dosages, cycling, reconstitution and risks. Published research plus practical notes at peptide.diy.",
     },
     "beginners-guide.html": {
         "description": "New to peptides? What they are, how they work, mixing basics, storage, routes, and safety. A straight starting point for research.",
@@ -19,7 +19,7 @@ PAGES = {
         "description": "How to deploy peptides: subcutaneous injection, topical moisturiser, and nasal spray. Units, math, and checklists for each route.",
     },
     "syringe-guide.html": {
-        "description": "Redirects to Deployment Methods — injection, topical moisturiser, and nasal spray guides.",
+        "description": "Redirects to Deployment Methods: injection, topical moisturiser, and nasal spray guides.",
     },
     "faq.html": {
         "description": "FAQ for peptide.diy: what we are, mixing and dosing, storage, protocol pages, legality, and how we build research-backed guides.",
@@ -40,7 +40,7 @@ PAGES = {
         "description": "Peptide storage guide: lyophilized powder & reconstituted solution temps, shelf life, labeling, shipping tips & critical don'ts.",
     },
     "blog.html": {
-        "description": "Peptide research articles, protocol updates & practical guides from peptide.diy — science-backed DIY peptide education.",
+        "description": "Peptide research articles, protocol updates and practical guides from peptide.diy.",
     },
     "glossary.html": {
         "description": "Peptide research glossary: plain definitions for BAC water, reconstitution, IU, secretagogues, stacks, blends, and 35+ terms used on peptide.diy.",
@@ -52,7 +52,7 @@ PAGES = {
         "description": "peptide.diy editorial policy: how we source, write & update content, cite research, review protocols & state limitations.",
     },
     "contact.html": {
-        "description": "Contact peptide.diy — request a protocol, ask a question or send feedback. Tell us the peptide name and vial size you need covered.",
+        "description": "Contact peptide.diy: request a protocol, ask a question or send feedback. Tell us the peptide name and vial size you need covered.",
     },
     "privacy.html": {
         "description": "Privacy policy for peptide.diy: data collection, cookies, analytics, your rights & how we handle information on this educational site.",
@@ -73,7 +73,7 @@ PAGES = {
         "description": "Retatrutide 20mg protocol: triple GLP-1/GIP/glucagon agonist reconstitution, weekly dose escalation, syringe units & safety notes.",
     },
     "cjc-ipamorelin.html": {
-        "description": "CJC-1295 + Ipamorelin 10mg blend: GH secretagogue reconstitution, 2–3x daily dosing, syringe math & synergistic GH release.",
+        "description": "CJC-1295 + Ipamorelin 10mg blend: GH secretagogue reconstitution, 2–3x daily dosing, syringe math and combined GH release.",
     },
 }
 

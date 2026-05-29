@@ -1,8 +1,8 @@
 {% assign seo_title = page.seo_title | default: page.title %}
 {% if page.title == 'Home' %}
-  {% assign full_title = page.seo_title | default: "DIY Peptide Education | Science-Backed Protocols" | append: " — peptide.diy" %}
+  {% assign full_title = page.seo_title | default: "DIY Peptide Education | Research-Led Protocols" | append: " | peptide.diy" %}
 {% else %}
-  {% assign full_title = seo_title | append: " — peptide.diy" %}
+  {% assign full_title = seo_title | append: " | peptide.diy" %}
 {% endif %}
 {% assign meta_desc = page.description | default: site.description %}
 {% if page.redirect_to %}

@@ -1,4 +1,4 @@
-# peptide.diy — https://www.peptide.diy/
+# peptide.diy - https://www.peptide.diy/
 User-agent: *
 Allow: /
 

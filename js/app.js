@@ -75,10 +75,10 @@ function computeInjection({ amountVal, amountUnit, bacWater, doseVal, doseUnit }
 
   const notes = [];
   if (volMl < 0.005) {
-    notes.push("Very small draw volume — consider using less BAC water for a higher concentration.");
+    notes.push("Very small draw volume. Consider using less BAC water for a higher concentration.");
   }
   if (volMl > 1) {
-    notes.push("Draw volume exceeds 1 mL — you may need multiple syringes or more BAC water.");
+    notes.push("Draw volume exceeds 1 mL. You may need multiple syringes or more BAC water.");
   }
 
   return {
@@ -94,7 +94,7 @@ function computeInjection({ amountVal, amountUnit, bacWater, doseVal, doseUnit }
 
 function computeCream({ amountVal, amountUnit, bacWater, doseVal, doseUnit, moisturiserG }) {
   if (amountUnit === "IU" || doseUnit === "IU") {
-    return { error: "Topical cream calculations use mg or mcg — not IU." };
+    return { error: "Topical cream calculations use mg or mcg, not IU." };
   }
   if ([amountVal, bacWater, doseVal, moisturiserG].some((v) => isNaN(v) || v <= 0)) {
     return { error: "Enter valid positive numbers in every field, including moisturiser base." };
@@ -115,7 +115,7 @@ function computeCream({ amountVal, amountUnit, bacWater, doseVal, doseUnit, mois
     `Mix ${formatVolumeMl(bacWater)} mL reconstituted peptide into ${round1(moisturiserG)} g moisturiser.`,
     `Approx. ${round1(concMcgG)} mcg peptide per gram of final cream (including liquid volume).`,
     `A pea-sized dab (~0.25–0.5 g) delivers roughly ${round1(concMcgG * 0.25)}–${round1(concMcgG * 0.5)} mcg peptide at this mix.`,
-    "Store mixed cream refrigerated. Use clean tools — not for injection.",
+    "Store mixed cream refrigerated. Use clean tools. Not for injection.",
   ];
 
   return {
@@ -131,7 +131,7 @@ function computeCream({ amountVal, amountUnit, bacWater, doseVal, doseUnit, mois
 
 function computeNasal({ amountVal, amountUnit, bacWater, doseVal, doseUnit, salineMl, sprayVolMl }) {
   if (amountUnit === "IU" || doseUnit === "IU") {
-    return { error: "Nasal spray calculations use mg or mcg — not IU." };
+    return { error: "Nasal spray calculations use mg or mcg, not IU." };
   }
   if ([amountVal, bacWater, doseVal, salineMl, sprayVolMl].some((v) => isNaN(v) || v <= 0)) {
     return {
@@ -161,12 +161,12 @@ function computeNasal({ amountVal, amountUnit, bacWater, doseVal, doseUnit, sali
   const doseDiff = Math.abs(mcgPerSpray - doseMcg) / doseMcg;
   if (doseDiff > 0.1) {
     notes.push(
-      `Your target is ${round1(doseMcg)} mcg per spray — adjust BAC water, saline, or dilution to get closer to that dose.`
+      `Your target is ${round1(doseMcg)} mcg per spray. Adjust BAC water, saline, or dilution to get closer to that dose.`
     );
   }
 
   if (sprayVolMl > 0.2) {
-    notes.push("Large volume per spray — double-check your sprayer output.");
+    notes.push("Large volume per spray. Double-check your sprayer output.");
   }
 
   return {

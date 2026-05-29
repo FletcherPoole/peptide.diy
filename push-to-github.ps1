@@ -19,9 +19,9 @@ $exists = & $gh repo view $repo 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Host "`nCreating github.com/$repo and pushing...`n"
     & $gh repo create $repo --public --source=. --remote=origin --push `
-        --description "peptide.diy — peptide research protocols and guides"
+        --description "peptide.diy: peptide research protocols and guides"
 } else {
-    Write-Host "`nRepo exists — pushing to origin main...`n"
+    Write-Host "`nRepo exists. Pushing to origin main...`n"
     $remote = & $git remote get-url origin 2>$null
     if (-not $remote) {
         $user = (& $gh api user -q .login)

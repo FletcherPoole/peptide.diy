@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dosage Calculator"
-description: "Calculate the right dose for injections, moisturisers, and nasal sprays — pick a method, enter your numbers, and get concentration, volume, and doses per vial."
+description: "Calculate the right dose for injections, moisturisers, and nasal sprays. Pick a method, enter your numbers, and get concentration, volume, and doses per vial."
 ---
 
 
@@ -36,10 +36,10 @@ description: "Calculate the right dose for injections, moisturisers, and nasal s
             <div class="form-group calc-method-field">
               <label for="c-moisturiser">Moisturiser base added (g)</label>
               <input type="number" id="c-moisturiser" placeholder="e.g. 50" step="any" min="0" inputmode="decimal">
-              <p class="calc-field-hint">Weight of plain, fragrance-free moisturiser you mix the reconstituted peptide into — not the peptide weight.</p>
+              <p class="calc-field-hint">Weight of plain, fragrance-free moisturiser you mix the reconstituted peptide into (not the peptide weight).</p>
             </div>
             <p class="calc-method-tip">
-              <strong>Pea-sized serving:</strong> Most people apply a dab about the size of a pea — roughly <strong>0.25–0.5&nbsp;g</strong> of cream per use (a fingertip unit is often ~0.5&nbsp;g). Use that as a visual guide when measuring your dose, not a syringe volume.
+              <strong>Pea-sized serving:</strong> Most people apply a dab about the size of a pea, roughly <strong>0.25–0.5&nbsp;g</strong> of cream per use (a fingertip unit is often ~0.5&nbsp;g). Use that as a visual guide when measuring your dose, not a syringe volume.
             </p>
           </div>
 
@@ -52,12 +52,12 @@ description: "Calculate the right dose for injections, moisturisers, and nasal s
               <div class="form-group calc-method-field">
                 <label for="c-saline">Sterile saline added (mL)</label>
                 <input type="number" id="c-saline" placeholder="e.g. 9" step="any" min="0" inputmode="decimal">
-                <p class="calc-field-hint">Mixed in after reconstitution — total liquid = BAC water + saline.</p>
+                <p class="calc-field-hint">Mixed in after reconstitution. Total liquid = BAC water + saline.</p>
               </div>
               <div class="form-group calc-method-field">
                 <label for="c-spray-vol">Liquid per spray (mL)</label>
                 <input type="number" id="c-spray-vol" placeholder="e.g. 0.1" step="any" min="0" inputmode="decimal">
-                <p class="calc-field-hint">How much your nasal sprayer delivers per pump — often 0.05–0.15 mL.</p>
+                <p class="calc-field-hint">How much your nasal sprayer delivers per pump, often 0.05–0.15 mL.</p>
               </div>
             </div>
           </div>
@@ -100,22 +100,22 @@ description: "Calculate the right dose for injections, moisturisers, and nasal s
           <div class="calc-result" id="c-result" role="region" aria-live="polite" aria-label="Calculation results">
             <div class="result-grid">
               <div class="res-box">
-                <div class="res-val" id="c-res-conc">—</div>
+                <div class="res-val" id="c-res-conc">-</div>
                 <div class="res-unit" id="c-res-label-1">concentration</div>
               </div>
               <div class="res-box">
-                <div class="res-val" id="c-res-vol">—</div>
+                <div class="res-val" id="c-res-vol">-</div>
                 <div class="res-unit" id="c-res-label-2">per dose</div>
               </div>
               <div class="res-box">
-                <div class="res-val" id="c-res-units">—</div>
+                <div class="res-val" id="c-res-units">-</div>
                 <div class="res-unit" id="c-res-label-3">total</div>
               </div>
             </div>
             <div class="calc-result-footer">
               <div class="calc-total-doses">
                 <div class="calc-total-label" id="c-res-total-label">Total doses</div>
-                <div class="calc-total-val" id="c-res-doses">—</div>
+                <div class="calc-total-val" id="c-res-doses">-</div>
               </div>
               <p id="c-res-notes" class="calc-notes"></p>
             </div>

@@ -184,7 +184,7 @@ mobile_raw = "\n".join(lines[71:99])
 <html lang="en">
 <head>
 {% include head.html %}
-<title>{% if page.title == 'Home' %}peptide.diy — Practical Peptide Research & Dosage Protocols{% else %}{{ page.title }} — peptide.diy{% endif %}</title>
+<title>{% if page.title == 'Home' %}peptide.diy | Practical Peptide Research & Dosage Protocols{% else %}{{ page.title }} | peptide.diy{% endif %}</title>
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 </head>
 <body>
