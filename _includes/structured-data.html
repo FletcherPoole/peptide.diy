@@ -95,6 +95,29 @@
 </script>
 {% endif %}
 
+{% if page.webapp %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ seo_title | jsonify }},
+  "url": {{ canonical | jsonify }},
+  "description": {{ meta_desc | strip | jsonify }},
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "publisher": { "@id": {{ org_id | jsonify }} },
+  "inLanguage": "en-GB"
+}
+</script>
+{% endif %}
+
 {% if page.title == 'FAQ' %}
 <script type="application/ld+json">
 {
