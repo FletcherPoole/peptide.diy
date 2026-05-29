@@ -347,7 +347,7 @@ function initProtocolSidebar() {
 
   const setActive = () => {
     let current = sections[0];
-    const offset = 100;
+    const offset = window.matchMedia("(max-width: 900px)").matches ? 140 : 120;
     sections.forEach((section) => {
       if (section.getBoundingClientRect().top - offset <= 0) current = section;
     });
