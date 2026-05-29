@@ -29,7 +29,7 @@
 </script>
 {% endif %}
 
-{% if page.breadcrumbs and page.title != 'Home' %}
+{% unless page.title == 'Home' or page.noindex == true or page.redirect_to %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,7 +60,7 @@
   ]
 }
 </script>
-{% endif %}
+{% endunless %}
 
 {% if page.last_updated and page.noindex != true %}
 <script type="application/ld+json">
