@@ -70,6 +70,7 @@
   "headline": {{ page.title | jsonify }},
   "description": {{ meta_desc | strip | jsonify }},
   "url": {{ canonical | jsonify }},
+  "image": {{ og_image | jsonify }},
   "dateModified": {{ page.last_updated | date: "%Y-%m-%d" | jsonify }},
   "datePublished": {{ page.last_updated | date: "%Y-%m-%d" | jsonify }},
   "author": {

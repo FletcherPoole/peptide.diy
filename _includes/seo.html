@@ -1,55 +1,119 @@
-{% assign seo_title = page.seo_title | default: page.title %}
-{% if page.title == 'Home' %}
-  {% assign full_title = page.seo_title | default: "DIY Peptide Education | Research-Led Protocols" | append: " | peptide.diy" %}
-{% else %}
-  {% assign full_title = seo_title | append: " | peptide.diy" %}
-{% endif %}
-{% assign meta_desc = page.description | default: site.description %}
-{% if page.redirect_to %}
-  {% assign canonical = page.redirect_to | absolute_url %}
-{% else %}
-  {% assign canonical = page.url | absolute_url %}
-{% endif %}
-{% if page.last_updated %}
-  {% assign og_type = page.og_type | default: "article" %}
-{% else %}
-  {% assign og_type = page.og_type | default: "website" %}
-{% endif %}
-
-<title>{{ full_title }}</title>
-<meta name="description" content="{{ meta_desc | strip | truncate: 160, '' }}">
-<meta name="author" content="peptide.diy">
-{% if page.noindex or page.redirect_to %}
-<meta name="robots" content="noindex, follow">
-{% else %}
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-{% endif %}
-<link rel="canonical" href="{{ canonical }}">
-<link rel="alternate" hreflang="en-gb" href="{{ canonical }}">
-<link rel="alternate" hreflang="x-default" href="{{ canonical }}">
-{% if page.redirect_to %}
-<meta http-equiv="refresh" content="0; url={{ canonical }}">
-{% endif %}
-{% if page.last_updated %}
-<meta property="article:modified_time" content="{{ page.last_updated | date: '%Y-%m-%d' }}">
-<meta property="article:published_time" content="{{ page.last_updated | date: '%Y-%m-%d' }}">
-{% endif %}
-
-<meta property="og:locale" content="en_GB">
-<meta property="og:site_name" content="peptide.diy">
-<meta property="og:type" content="{{ og_type }}">
-<meta property="og:title" content="{{ full_title }}">
-<meta property="og:description" content="{{ meta_desc | strip | truncate: 200, '' }}">
-<meta property="og:url" content="{{ canonical }}">
-{% assign og_image = page.og_image | default: "/og-image.png" | absolute_url %}
-<meta property="og:image" content="{{ og_image }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="peptide.diy | research-led peptide protocols">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ full_title }}">
-<meta name="twitter:description" content="{{ meta_desc | strip | truncate: 200, '' }}">
-<meta name="twitter:image" content="{{ og_image }}">
-
-{% include structured-data.html %}
+{% assign seo_title = page.seo_title | default: page.title %}
+
+{% if page.title == 'Home' %}
+
+  {% assign full_title = page.seo_title | default: "DIY Peptide Education | Research-Led Protocols" | append: " | peptide.diy" %}
+
+{% else %}
+
+  {% assign full_title = seo_title | append: " | peptide.diy" %}
+
+{% endif %}
+
+{% assign meta_desc = page.description | default: site.description %}
+
+{% if page.redirect_to %}
+
+  {% assign canonical = page.redirect_to | absolute_url %}
+
+{% else %}
+
+  {% assign canonical = page.url | absolute_url %}
+
+{% endif %}
+
+{% if page.last_updated %}
+
+  {% assign og_type = page.og_type | default: "article" %}
+
+{% else %}
+
+  {% assign og_type = page.og_type | default: "website" %}
+
+{% endif %}
+
+
+
+<title>{{ full_title }}</title>
+
+<meta name="description" content="{{ meta_desc | strip | truncate: 160, '' }}">
+
+<meta name="author" content="peptide.diy">
+
+{% if page.noindex or page.redirect_to %}
+
+<meta name="robots" content="noindex, follow">
+
+{% else %}
+
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+{% endif %}
+
+<link rel="canonical" href="{{ canonical }}">
+
+<link rel="alternate" hreflang="en-gb" href="{{ canonical }}">
+
+<link rel="alternate" hreflang="x-default" href="{{ canonical }}">
+
+{% if page.redirect_to %}
+
+<meta http-equiv="refresh" content="0; url={{ canonical }}">
+
+{% endif %}
+
+{% if page.last_updated %}
+
+<meta property="article:modified_time" content="{{ page.last_updated | date: '%Y-%m-%d' }}">
+
+<meta property="article:published_time" content="{{ page.last_updated | date: '%Y-%m-%d' }}">
+
+{% endif %}
+
+
+
+<meta property="og:locale" content="en_GB">
+
+<meta property="og:site_name" content="peptide.diy">
+
+<meta property="og:type" content="{{ og_type }}">
+
+<meta property="og:title" content="{{ full_title }}">
+
+<meta property="og:description" content="{{ meta_desc | strip | truncate: 200, '' }}">
+
+<meta property="og:url" content="{{ canonical }}">
+
+{% if page.og_image %}
+  {% assign og_image = page.og_image | absolute_url %}
+{% elsif page.search_type == 'protocol' %}
+  {% assign og_slug = page.url | remove: '.html' | remove: '/' %}
+  {% assign og_image = '/images/og/' | append: og_slug | append: '.png' | absolute_url %}
+{% else %}
+  {% assign og_image = '/og-image.png' | absolute_url %}
+{% endif %}
+
+{% assign og_image_alt = page.og_image_alt | default: seo_title | default: page.title %}
+
+<meta property="og:image" content="{{ og_image }}">
+
+<meta property="og:image:width" content="1200">
+
+<meta property="og:image:height" content="630">
+
+<meta property="og:image:alt" content="{{ og_image_alt | strip }}">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="{{ full_title }}">
+
+<meta name="twitter:description" content="{{ meta_desc | strip | truncate: 200, '' }}">
+
+<meta name="twitter:image" content="{{ og_image }}">
+
+
+
+{% include structured-data.html %}
+

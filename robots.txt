@@ -14,4 +14,8 @@ Disallow: /syringe-guide.html
 
 Disallow: /search.json
 
+# AI / LLM site index
+# https://llmstxt.org/
+Allow: /llms.txt
+
 Sitemap: https://www.peptide.diy/sitemap.xml

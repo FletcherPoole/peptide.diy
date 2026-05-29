@@ -25,3 +25,4 @@ exclude:
   - split_pages.py
   - fix_proto_cards.py
   - add_seo_descriptions.py
+  - scripts/

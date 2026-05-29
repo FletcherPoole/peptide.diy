@@ -1,0 +1,37 @@
+# peptide.diy
+
+> peptide.diy is a free, research-education website covering peptide dosage protocols, reconstitution guides, storage, deployment methods, and cited literature. We are not a vendor and do not sell peptides. Content is for educational study only, not medical advice.
+
+This site uses British English. Protocol pages include reconstitution maths, dosing schedules, syringe units, storage notes, and PubMed-linked references where available. Always verify information against primary sources and applicable law in your jurisdiction.
+
+## Protocols
+
+- [Single peptide protocols](https://www.peptide.diy/single-peptides.html): Browse individual peptide dosage protocols.
+- [GHK-Cu 50mg protocol](https://www.peptide.diy/ghk-cu-50mg.html): Skin and anti-ageing copper peptide protocol with injectable and topical routes.
+- [GHK-Cu 100mg protocol](https://www.peptide.diy/ghk-cu-100mg.html): Higher-dose GHK-Cu protocol with reconstitution and cycle guidance.
+- [Peptide blend protocols](https://www.peptide.diy/blends.html): Pre-mixed multi-peptide vial protocols.
+- [Peptide stack protocols](https://www.peptide.diy/stacks.html): Multi-vial coordinated schedules.
+- [Dosage calculator](https://www.peptide.diy/calculator.html): Free reconstitution calculator for injections, moisturisers, and nasal sprays.
+
+## Guides
+
+- [Beginner's guide](https://www.peptide.diy/beginners-guide.html): Introduction to peptides, safety, and basics.
+- [Reconstitution guide](https://www.peptide.diy/reconstitution-guide.html): BAC water, concentration maths, and mixing steps.
+- [Storage guide](https://www.peptide.diy/storage-guide.html): Powder and liquid storage rules.
+- [Deployment methods](https://www.peptide.diy/deployment-methods.html): Injection, topical, and nasal routes.
+- [FAQ](https://www.peptide.diy/faq.html): Common questions about the site and peptide research material.
+- [Glossary](https://www.peptide.diy/glossary.html): Plain definitions for peptide research terms.
+
+## About
+
+- [About peptide.diy](https://www.peptide.diy/about.html): Mission and editorial approach.
+- [Editorial policy](https://www.peptide.diy/editorial-policy.html): How content is sourced, written, and updated.
+- [Contact](https://www.peptide.diy/contact.html): Request a protocol or send feedback.
+
+## Optional
+
+- [Blog](https://www.peptide.diy/blog.html): Research articles and protocol updates (expanding).
+- [Privacy policy](https://www.peptide.diy/privacy.html): Data handling for this educational site.
+- [Terms and conditions](https://www.peptide.diy/terms.html): Site use rules.
+- [Disclaimer](https://www.peptide.diy/disclaimer.html): Research-education limitations and liability.
+- [Cookie policy](https://www.peptide.diy/cookie-policy.html): Analytics and cookie use.
