@@ -1,8 +1,8 @@
 title: peptide.diy
 description: Science-backed peptide protocols, reconstitution guides, and DIY education combining research with practical experience.
 lang: en_US
-baseurl: "/peptide.diy"
-url: "https://fletcherpoole.github.io"
+baseurl: ""
+url: "https://www.peptide.diy"
 
 plugins:
   - jekyll-sitemap

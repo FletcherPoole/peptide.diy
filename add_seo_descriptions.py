@@ -10,19 +10,19 @@ PAGES = {
         "description": "Genuine science-backed peptide protocols. Dosages, synergy, cycling, reconstitution & risks — research plus real-world insight at peptide.diy.",
     },
     "beginners-guide.html": {
-        "description": "New to peptides? Learn what they are, how they work, handling basics, syringes, storage & safety — a clear foundation for peptide research.",
+        "description": "New to peptides? What they are, how they work, mixing basics, storage, routes, and safety. A straight starting point for research.",
     },
     "reconstitution-guide.html": {
-        "description": "Step-by-step peptide reconstitution: BAC water volumes, concentration math, mixing technique, common mistakes & post-reconstitution storage.",
+        "description": "How to reconstitute peptides: BAC water, concentration math, mixing steps, drawing doses, and fixing common mistakes.",
     },
     "deployment-methods.html": {
-        "description": "Peptide deployment methods — subcutaneous injection, topical moisturiser creams, and nasal sprays. U-100 syringes, units, math, and checklists.",
+        "description": "How to deploy peptides: subcutaneous injection, topical moisturiser, and nasal spray. Units, math, and checklists for each route.",
     },
     "syringe-guide.html": {
         "description": "Redirects to Deployment Methods — injection, topical moisturiser, and nasal spray guides.",
     },
     "faq.html": {
-        "description": "Peptide FAQ: reconstitution, storage, syringe units, blends vs stacks, dosing, safety & how peptide.diy builds its research-backed guides.",
+        "description": "FAQ for peptide.diy: what we are, mixing and dosing, storage, protocol pages, legality, and how we build research-backed guides.",
     },
     "calculator.html": {
         "description": "Free peptide reconstitution calculator. Enter vial size, BAC water & dose to get mL per injection, syringe units & total doses per vial.",
@@ -43,7 +43,7 @@ PAGES = {
         "description": "Peptide research articles, protocol updates & practical guides from peptide.diy — science-backed DIY peptide education.",
     },
     "glossary.html": {
-        "description": "Peptide glossary with 35+ terms defined: reconstitution, BAC water, IU, secretagogues, lyophilized powder & more in plain language.",
+        "description": "Peptide research glossary: plain definitions for BAC water, reconstitution, IU, secretagogues, stacks, blends, and 35+ terms used on peptide.diy.",
     },
     "about.html": {
         "description": "About peptide.diy: our mission to combine peer-reviewed research with practical experience for honest, usable peptide education.",

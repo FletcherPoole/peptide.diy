@@ -32,5 +32,5 @@ if ($LASTEXITCODE -ne 0) {
 
 $user = (& $gh api user -q .login)
 Write-Host "`nDone. Enable Pages: https://github.com/$user/$repo/settings/pages"
-Write-Host "Site URL: https://$user.github.io/$repo/"
-Write-Host "Set _config.yml baseurl to `"/$repo`" if links look wrong.`n"
+Write-Host "Site URL: https://www.peptide.diy/"
+Write-Host "Custom domain configured in _config.yml and CNAME.`n"
