@@ -377,6 +377,57 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 .ref-list{font-size:.88rem;color:var(--text2);padding-left:1.25rem}
 .ref-list li{margin-bottom:.65rem}
 .ref-list a{word-break:break-word}
+
+/* ── PROTOCOL SIDEBAR LAYOUT ── */
+.protocol-layout{
+  display:grid;grid-template-columns:minmax(200px,240px) minmax(0,1fr);
+  gap:clamp(2rem,4vw,3.5rem);align-items:start;
+}
+.protocol-sidebar{position:sticky;top:calc(var(--nav-h) + 1.25rem)}
+.protocol-nav-title{
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;
+}
+.protocol-nav{display:flex;flex-direction:column;gap:.15rem}
+.protocol-nav a{
+  display:block;padding:.42rem 0 .42rem .85rem;
+  font-size:.84rem;color:var(--text2);line-height:1.35;
+  border-left:2px solid var(--border);transition:all .18s;
+}
+.protocol-nav a:hover,.protocol-nav a.active{
+  color:var(--accent);border-left-color:var(--accent);
+  background:linear-gradient(90deg,rgba(94,246,200,0.06),transparent);
+}
+.protocol-main{min-width:0;max-width:780px}
+.protocol-tldr{
+  background:linear-gradient(135deg,rgba(94,246,200,0.08),rgba(94,246,200,0.02));
+  border:1px solid var(--border2);border-radius:var(--r);
+  padding:1.35rem 1.5rem;margin-bottom:2.5rem;
+}
+.protocol-tldr-label{
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;
+}
+.protocol-tldr ul{margin:0;padding-left:1.2rem;color:var(--text)}
+.protocol-tldr li{margin-bottom:.45rem}
+.protocol-tldr li:last-child{margin-bottom:0}
+@media(max-width:960px){
+  .protocol-layout{grid-template-columns:1fr}
+  .protocol-sidebar{
+    position:static;top:auto;
+    background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
+    padding:1rem 1.1rem;margin-bottom:1.5rem;
+  }
+  .protocol-nav{
+    flex-direction:row;flex-wrap:wrap;gap:.35rem;
+  }
+  .protocol-nav a{
+    border-left:none;border:1px solid var(--border);border-radius:999px;
+    padding:.35rem .75rem;font-size:.78rem;background:var(--bg2);
+  }
+  .protocol-nav a:hover,.protocol-nav a.active{border-color:var(--accent2)}
+}
+
 .stack-blend-intro{margin:.35rem 0 1.1rem;font-size:.9rem;color:var(--text2);line-height:1.55}
 .stack-blend-row{
   display:flex;gap:1rem;align-items:stretch;

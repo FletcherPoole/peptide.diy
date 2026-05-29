@@ -335,6 +335,33 @@ function initCalculators() {
 
 document.addEventListener("DOMContentLoaded", initCalculators);
 
+// ── PROTOCOL SIDEBAR ACTIVE STATE ──
+function initProtocolSidebar() {
+  const nav = document.querySelector(".protocol-nav");
+  if (!nav) return;
+  const links = [...nav.querySelectorAll('a[href^="#"]')];
+  const sections = links
+    .map((a) => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  const setActive = () => {
+    let current = sections[0];
+    const offset = 100;
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top - offset <= 0) current = section;
+    });
+    links.forEach((a) => {
+      a.classList.toggle("active", a.getAttribute("href") === "#" + current.id);
+    });
+  };
+
+  setActive();
+  window.addEventListener("scroll", setActive, { passive: true });
+}
+
+document.addEventListener("DOMContentLoaded", initProtocolSidebar);
+
 // ── PROTOCOL FILTER ──
 function filterProtos(cat) {
   document.querySelectorAll("#proto-list .proto-card").forEach((c) => {
