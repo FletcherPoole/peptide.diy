@@ -15,8 +15,11 @@ PAGES = {
     "reconstitution-guide.html": {
         "description": "Step-by-step peptide reconstitution: BAC water volumes, concentration math, mixing technique, common mistakes & post-reconstitution storage.",
     },
+    "deployment-methods.html": {
+        "description": "Peptide deployment methods — subcutaneous injection, topical moisturiser creams, and nasal sprays. U-100 syringes, units, math, and checklists.",
+    },
     "syringe-guide.html": {
-        "description": "Read U-100, U-50 & U-20 insulin syringes. Convert IU, mg & mcg to injection volume with tables, examples & peptide dosing math.",
+        "description": "Redirects to Deployment Methods — injection, topical moisturiser, and nasal spray guides.",
     },
     "faq.html": {
         "description": "Peptide FAQ: reconstitution, storage, syringe units, blends vs stacks, dosing, safety & how peptide.diy builds its research-backed guides.",
