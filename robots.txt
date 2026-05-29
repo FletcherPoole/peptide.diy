@@ -6,4 +6,10 @@ Allow: /
 Disallow: /split_pages.py
 Disallow: /fix_proto_cards.py
 
+# Draft protocol pages (noindex; exclude from crawl budget)
+Disallow: /bpc-tb500.html
+Disallow: /retatrutide.html
+Disallow: /cjc-ipamorelin.html
+Disallow: /syringe-guide.html
+
 Sitemap: https://www.peptide.diy/sitemap.xml
