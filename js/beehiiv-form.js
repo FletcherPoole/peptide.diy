@@ -1,23 +1,62 @@
 (function () {
   const BEEHIIV_ORIGIN = "https://subscribe-forms.beehiiv.com";
+  const DEFAULT_HEIGHT = 52;
+  const MAX_HEIGHT = 96;
 
-  function applyIframeSize(iframe, payload) {
-    if (!iframe || !payload) return;
-    if (payload.height) {
-      iframe.style.height = payload.height + "px";
+  function clampHeight(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) return DEFAULT_HEIGHT;
+    if (n > MAX_HEIGHT) return DEFAULT_HEIGHT;
+    return Math.round(n);
+  }
+
+  function applyIframeSize(iframe, height) {
+    if (!iframe) return;
+    const h = clampHeight(height);
+    iframe.style.setProperty("height", h + "px", "important");
+    iframe.style.setProperty("max-height", MAX_HEIGHT + "px", "important");
+    iframe.style.setProperty("width", "100%", "important");
+    iframe.style.setProperty("max-width", "100%", "important");
+    iframe.style.setProperty("overflow", "hidden", "important");
+
+    let node = iframe.parentElement;
+    while (node && node.classList.contains("beehiiv-form-wrap") === false) {
+      node.style.setProperty("height", h + "px", "important");
+      node.style.setProperty("max-height", MAX_HEIGHT + "px", "important");
+      node.style.setProperty("overflow", "hidden", "important");
+      node = node.parentElement;
     }
-    iframe.style.width = "100%";
-    iframe.style.maxWidth = "100%";
+
     const wrap = iframe.closest(".beehiiv-form-wrap");
-    if (wrap && payload.height) {
-      wrap.style.height = payload.height + "px";
+    if (wrap) {
+      wrap.style.setProperty("height", h + "px", "important");
+      wrap.style.setProperty("max-height", MAX_HEIGHT + "px", "important");
+      wrap.style.setProperty("overflow", "hidden", "important");
     }
   }
 
-  function requestResize(iframe) {
-    if (!iframe?.contentWindow) return;
-    iframe.removeAttribute("data-bhv-sized");
-    iframe.contentWindow.postMessage({ type: "beehiiv:resize" }, "*");
+  function watchIframe(iframe) {
+    if (!iframe || iframe.dataset.bhvWatch) return;
+    iframe.dataset.bhvWatch = "1";
+
+    applyIframeSize(iframe, DEFAULT_HEIGHT);
+
+    const restyle = () => {
+      const current = parseFloat(iframe.style.height);
+      if (!Number.isFinite(current) || current > MAX_HEIGHT) {
+        applyIframeSize(iframe, DEFAULT_HEIGHT);
+      }
+    };
+
+    const styleObserver = new MutationObserver(restyle);
+    styleObserver.observe(iframe, { attributes: true, attributeFilter: ["style"] });
+
+    let checks = 0;
+    const interval = window.setInterval(() => {
+      restyle();
+      checks += 1;
+      if (checks >= 24) window.clearInterval(interval);
+    }, 250);
   }
 
   function initBeehiivForm() {
@@ -33,42 +72,24 @@
         const iframe = wrap.querySelector("iframe");
         if (!iframe || event.source !== iframe.contentWindow) return;
 
-        if (msg.type === "beehiiv:styles" && msg.payload) {
-          applyIframeSize(iframe, msg.payload);
-        } else if (msg.type === "beehiiv:challenge" && msg.payload) {
-          applyIframeSize(iframe, msg.payload);
+        if (
+          (msg.type === "beehiiv:styles" || msg.type === "beehiiv:challenge") &&
+          msg.payload?.height
+        ) {
+          applyIframeSize(iframe, msg.payload.height);
         }
       });
     });
 
     wraps.forEach((wrap) => {
-      let lastWidth = 0;
-      let resizeTimer;
-
-      const onWidthChange = () => {
+      const observer = new MutationObserver(() => {
         const iframe = wrap.querySelector("iframe");
-        if (!iframe) return;
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => requestResize(iframe), 120);
-      };
-
-      const mutationObserver = new MutationObserver(() => {
-        const iframe = wrap.querySelector("iframe");
-        if (!iframe || iframe.dataset.bhvInit) return;
-        iframe.dataset.bhvInit = "1";
-        onWidthChange();
+        if (iframe) watchIframe(iframe);
       });
-      mutationObserver.observe(wrap, { childList: true, subtree: true });
+      observer.observe(wrap, { childList: true, subtree: true });
 
-      if (typeof ResizeObserver !== "undefined") {
-        const resizeObserver = new ResizeObserver((entries) => {
-          const width = entries[0]?.contentRect.width || 0;
-          if (!width || Math.abs(width - lastWidth) < 4) return;
-          lastWidth = width;
-          onWidthChange();
-        });
-        resizeObserver.observe(wrap);
-      }
+      const existing = wrap.querySelector("iframe");
+      if (existing) watchIframe(existing);
     });
   }
 
