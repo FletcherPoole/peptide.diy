@@ -1,0 +1,11 @@
+      {% for group in site.data.faq %}
+      <div class="faq-group">
+        <div class="faq-group-title">{{ group.title }}</div>
+        {% for item in group.items %}
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">{{ item.q }} <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+          <div class="faq-a">{% if item.a_html %}{{ item.a_html | markdownify }}{% else %}{{ item.a }}{% endif %}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}

@@ -12,4 +12,6 @@ Disallow: /retatrutide.html
 Disallow: /cjc-ipamorelin.html
 Disallow: /syringe-guide.html
 
+Disallow: /search.json
+
 Sitemap: https://www.peptide.diy/sitemap.xml

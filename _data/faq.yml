@@ -1,0 +1,54 @@
+- title: About peptide.diy
+  items:
+    - q: What is peptide.diy?
+      a: A free research-education site. We compile published science, FDA labels, and primary sources into protocols and guides you can actually follow. Where community anecdotes add useful context, we label them clearly. They don't replace the research.
+    - q: Is this medical advice?
+      a: No. We are not doctors and this is not clinical care. Nothing here diagnoses, treats, or tells you what to put in your body. If you're making health decisions, talk to a licensed professional.
+    - q: Do you sell peptides?
+      a: No. We don't sell compounds, syringes, or anything else. No money is paid to peptide.diy for access or referrals. We're an information site only. Vendor mentions exist to point you toward sources we think are worth checking, not because we're paid.
+    - q: "Singles, blends, and stacks: what's the difference?"
+      a_html: "**Singles** = one peptide per vial. **Blends** = two or more peptides pre-mixed at a fixed ratio in one vial. **Stacks** = separate vials run on one coordinated schedule so you can adjust dose, timing, and deloads for each compound on its own."
+    - q: How do I request a missing protocol?
+      a_html: Message us on the [Contact page](/contact.html). Include peptide name, vial size, and anything relevant to dosing. We prioritise based on demand and what's actually in the literature.
+
+- title: Mixing and Dosing
+  items:
+    - q: What is reconstitution?
+      a_html: Adding liquid (usually BAC water) to freeze-dried powder so you can measure doses. How much water you add sets concentration, which sets how much you draw per dose. Full guide [Reconstitution Guide](/reconstitution-guide.html).
+    - q: Why BAC water?
+      a: Sterile water plus 0.9% benzyl alcohol. The preservative slows bacteria after you puncture the stopper, so the vial stays usable for weeks in the fridge instead of hours.
+    - q: How much BAC water should I add?
+      a_html: Depends on vial size and what dose volume you want to draw comfortably. Our protocol pages usually recommend 1, 2, or 3 mL to keep maths simple. Custom amounts [Dosage Calculator](/calculator.html) (injection, moisturiser, or nasal).
+    - q: When do I use IU instead of mg?
+      a_html: "**mg/mcg** = mass (what's in the vial). **IU** = biological potency, mainly HGH and HCG. HGH rough guide ~3 IU per 1 mg somatropin. Most peptides on this site use mg or mcg."
+    - q: mg vs mcg?
+      a: 1 mg = 1,000 mcg. 250 mcg = 0.25 mg. Confusing them is a thousand-fold dosing error. Always double-check the unit.
+    - q: What syringes do I need?
+      a_html: U-100 insulin syringes for SubQ injection. 100 units = 1 mL. For topical and nasal routes, different rules apply. See [Deployment Methods](/deployment-methods.html).
+
+- title: Storage
+  items:
+    - q: How do I store dry powder?
+      a_html: Cool, dark, dry. Fridge at 2–8°C is best long-term. Some compounds tolerate freezing while still lyophilised. Details [Storage Guide](/storage-guide.html).
+    - q: Where does mixed peptide go?
+      a: Fridge immediately. Upright. Don't shake. Never freeze liquid peptide.
+    - q: How long does a mixed vial last?
+      a: ~25–30 days with BAC water if refrigerated. Plain sterile water? 24–48 hours max. When in doubt, discard.
+
+- title: Our Protocol Pages
+  items:
+    - q: What's on a protocol page?
+      a: Compound overview, dosing schedule, reconstitution steps, supplies list, safety notes with citations. Syringe visuals where they help. Same layout across compounds so you know where to look.
+    - q: Are these peer-reviewed journal articles?
+      a_html: No. We're not a journal. We turn published evidence into usable protocols and link to primary sources. How we handle research vs anecdotes [Editorial Policy](/editorial-policy.html).
+
+- title: Safety and Legal
+  items:
+    - q: Are research peptides legal?
+      a: Depends on country, state, and compound. Many are sold for lab research only. Semaglutide, HGH, and HCG are prescription drugs in clinical contexts. US federal law restricts non-medical HGH distribution. Know your local rules before you buy anything.
+    - q: Banned in sport?
+      a_html: Most performance peptides are on [WADA's prohibited list](https://www.wada-ama.org/en/prohibited-list). GH, secretagogues (CJC, Ipamorelin, MK-677), GH fragments, and more. Competing athletes should check the current list.
+    - q: What about side effects?
+      a: Depends entirely on the compound. Site irritation, headache, nausea, and fatigue show up a lot. GH agents can cause water retention or joint ache. GLP-1 agonists often hit the gut. Each protocol page lists compound-specific risks from clinical sources.
+    - q: Can I combine multiple peptides?
+      a_html: People do, and our [Stacks](/stacks.html) and [Blends](/blends.html) sections cover common pairings. Every added compound adds interaction risk. Stack pages note where evidence is solid vs speculative. Talk to a professional if you're unsure.

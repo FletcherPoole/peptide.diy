@@ -10,6 +10,17 @@ formspree_contact_id: "mykvvppj"
 plugins:
   - jekyll-sitemap
 
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      sitemap: true
+  - scope:
+      path: "search.json"
+    values:
+      sitemap: false
+
 exclude:
   - split_pages.py
   - fix_proto_cards.py

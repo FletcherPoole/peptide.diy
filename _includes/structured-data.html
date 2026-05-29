@@ -1,0 +1,122 @@
+{% assign site_url = site.url | append: site.baseurl %}
+{% assign org_id = site_url | append: "#organization" %}
+{% assign website_id = site_url | append: "#website" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": {{ org_id | jsonify }},
+  "name": "peptide.diy",
+  "url": {{ site_url | jsonify }},
+  "logo": {{ "/og-image.png" | absolute_url | jsonify }},
+  "description": {{ site.description | jsonify }}
+}
+</script>
+
+{% if page.title == 'Home' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ website_id | jsonify }},
+  "name": "peptide.diy",
+  "url": {{ site_url | jsonify }},
+  "description": {{ meta_desc | strip | jsonify }},
+  "publisher": { "@id": {{ org_id | jsonify }} },
+  "inLanguage": "en-GB"
+}
+</script>
+{% endif %}
+
+{% if page.breadcrumbs and page.title != 'Home' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {{ site_url | append: "/" | jsonify }}
+    }
+    {% if page.breadcrumbs %}
+      {% for crumb in page.breadcrumbs %}
+      ,{
+        "@type": "ListItem",
+        "position": {{ forloop.index | plus: 1 }},
+        "name": {{ crumb.name | jsonify }},
+        "item": {{ crumb.url | absolute_url | jsonify }}
+      }
+      {% endfor %}
+    {% endif %}
+    ,{
+      "@type": "ListItem",
+      "position": {% if page.breadcrumbs %}{{ page.breadcrumbs.size | plus: 2 }}{% else %}2{% endif %},
+      "name": {{ page.title | jsonify }},
+      "item": {{ canonical | jsonify }}
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.last_updated and page.noindex != true %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ meta_desc | strip | jsonify }},
+  "url": {{ canonical | jsonify }},
+  "dateModified": {{ page.last_updated | date: "%Y-%m-%d" | jsonify }},
+  "datePublished": {{ page.last_updated | date: "%Y-%m-%d" | jsonify }},
+  "author": {
+    "@type": "Organization",
+    "@id": {{ org_id | jsonify }},
+    "name": "peptide.diy"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": {{ org_id | jsonify }},
+    "name": "peptide.diy",
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ "/og-image.png" | absolute_url | jsonify }}
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ canonical | jsonify }}
+  },
+  "inLanguage": "en-GB"
+}
+</script>
+{% endif %}
+
+{% if page.title == 'FAQ' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% assign faq_first = true %}
+    {% for group in site.data.faq %}
+      {% for item in group.items %}
+        {% unless faq_first %},{% endunless %}
+        {
+          "@type": "Question",
+          "name": {{ item.q | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ item.a | default: item.a_html | strip_html | normalize_whitespace | jsonify }}
+          }
+        }
+        {% assign faq_first = false %}
+      {% endfor %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
