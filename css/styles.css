@@ -702,18 +702,44 @@ footer{
 .footer-col a{font-size:.87rem;color:var(--text3);transition:color .2s}
 .footer-col a:hover{color:var(--accent)}
 .footer-newsletter p{font-size:.87rem;color:var(--text3);margin-bottom:.8rem}
-.newsletter-form{display:flex;gap:.5rem}
-.newsletter-form input{
-  flex:1;background:var(--bg4);border:1px solid var(--border);color:var(--text);
-  padding:.6rem .9rem;border-radius:var(--r2);font-size:.87rem;outline:none;
+.footer-subscribe-link{
+  display:inline-block;margin-top:.25rem;
+  font-size:.82rem;padding:.55rem 1rem;
 }
-.newsletter-form input:focus{border-color:var(--accent)}
-.newsletter-form button{
-  background:var(--accent);color:var(--bg);border:none;
-  padding:.6rem 1rem;border-radius:var(--r2);font-weight:700;font-size:.82rem;
-  cursor:pointer;transition:background .2s;white-space:nowrap;
+.beehiiv-form-wrap{
+  width:100%;max-width:100%;overflow:hidden;
+  border-radius:var(--r2);
 }
-.newsletter-form button:hover{background:var(--accent2)}
+.beehiiv-form-wrap > div{
+  width:100% !important;max-width:100% !important;margin:0 !important;
+}
+.beehiiv-form-wrap iframe{
+  width:100% !important;max-width:100% !important;
+  border:none !important;display:block !important;
+  background:transparent;
+  min-height:52px;
+}
+.footer-newsletter .beehiiv-form-wrap iframe{min-height:48px}
+.newsletter-band{
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.newsletter-band-grid{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:clamp(2rem,5vw,4rem);
+  align-items:center;
+}
+.newsletter-band-copy h2{margin-bottom:.75rem}
+.newsletter-band-copy p{color:var(--text2);max-width:420px}
+.newsletter-band-form{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:clamp(1rem,3vw,1.5rem);
+}
+.newsletter-band-form .beehiiv-form-wrap iframe{min-height:56px}
 .footer-bottom{
   border-top:1px solid var(--border);padding-top:1.5rem;
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
@@ -837,6 +863,7 @@ footer{
   .hero-visual{display:none}
   .why-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .newsletter-band-grid{grid-template-columns:1fr}
   .grid-3{grid-template-columns:repeat(2,1fr)}
   .result-grid{grid-template-columns:1fr 1fr}
 }

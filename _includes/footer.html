@@ -38,13 +38,14 @@
           <li><a href="{{ '/contact.html' | relative_url }}">Contact Us</a></li>
         </ul>
       </div>
-      <div class="footer-col footer-newsletter">
+      <div class="footer-col footer-newsletter" id="subscribe">
         <h4>Stay Updated</h4>
-        <p>Stay up to date with all content we put out.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="your@email.com">
-          <button>Subscribe</button>
-        </div>
+        <p>New protocols, guide updates, and research notes. No spam.</p>
+        {% if page.url == '/' %}
+          <a class="btn btn-outline footer-subscribe-link" href="#newsletter">Subscribe on this page</a>
+        {% else %}
+          {% include beehiiv-form.html %}
+        {% endif %}
       </div>
     </div>
     <div class="footer-bottom">
