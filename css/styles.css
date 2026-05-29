@@ -374,7 +374,9 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 .callout.warning strong{color:var(--accent2)}
 .callout.danger strong{color:var(--danger)}
 
-.stack-blend-callout{margin-bottom:2rem;padding:1.25rem 1.35rem 1.35rem}
+.ref-list{font-size:.88rem;color:var(--text2);padding-left:1.25rem}
+.ref-list li{margin-bottom:.65rem}
+.ref-list a{word-break:break-word}
 .stack-blend-intro{margin:.35rem 0 1.1rem;font-size:.9rem;color:var(--text2);line-height:1.55}
 .stack-blend-row{
   display:flex;gap:1rem;align-items:stretch;
