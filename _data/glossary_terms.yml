@@ -1,0 +1,66 @@
+- term: Amino Acid
+  def: Building block of peptides and proteins. Peptides are usually 2–50 amino acids linked together.
+- term: Analogue
+  def: Lab-made version of a natural peptide, tweaked to change stability, half-life, or receptor activity.
+- term: BAC Water (Bacteriostatic Water)
+  def: Sterile water with 0.9% benzyl alcohol. Standard diluent for reconstitution.
+- term: Bioavailability
+  def: How much of a dose actually reaches circulation in active form.
+- term: Blend
+  def: One vial with two or more peptides at a fixed ratio. Reconstitute once; every dose gives the same proportion.
+- term: BPC-157
+  def: Body Protection Compound-157. 15-amino acid peptide studied for tissue repair, gut healing, and inflammation.
+- term: Certificate of Analysis (COA)
+  def: Vendor document showing purity and identity testing (HPLC, mass spec).
+- term: Concentration
+  def: Peptide per unit volume after mixing. Total peptide divided by BAC water volume.
+- term: CJC-1295
+  def: Modified GHRH analogue. No DAC is short acting; with DAC binds albumin for a much longer half-life.
+- term: DAC (Drug Affinity Complex)
+  def: Albumin-binding modification on CJC-1295 that stretches half-life from minutes to roughly a week.
+- term: Diluent
+  def: Liquid you dissolve powder in. Usually BAC water.
+- term: Dose-Response Curve
+  def: How effect changes with dose. Too little, sweet spot, or too much with diminishing returns.
+- term: GH (Growth Hormone)
+  def: 191-amino acid pituitary hormone. Research form often called HGH or somatropin.
+- term: GHRH (Growth Hormone Releasing Hormone)
+  def: Hypothalamic signal that tells the pituitary to release GH.
+- term: GHRP (Growth Hormone Releasing Peptide)
+  def: Peptides that trigger GH release via ghrelin receptors. GHRP-2, GHRP-6, Ipamorelin.
+- term: GHK-Cu
+  def: Copper tripeptide studied for skin remodelling, collagen support, and anti-ageing research.
+- term: GLP-1 (Glucagon-Like Peptide-1)
+  def: Incretin hormone affecting insulin, appetite, and gastric emptying.
+- term: Half-Life
+  def: Time for blood concentration to drop by half.
+- term: IM (Intramuscular) Injection
+  def: Into muscle tissue. Some protocols specify IM instead of SubQ.
+- term: Ipamorelin
+  def: Selective GHRP with minimal cortisol or prolactin bump. Common partner for CJC-1295.
+- term: IU (International Unit)
+  def: Measures biological potency, not mass. Used for HGH and HCG.
+- term: Lyophilisation
+  def: Freeze-drying. Removes water under vacuum to make stable powder.
+- term: mcg (Microgram)
+  def: One thousandth of a milligram. Many doses are in mcg.
+- term: mg (Milligram)
+  def: Vial labels usually show total peptide in mg.
+- term: mL (Millilitre)
+  def: Liquid volume. On U-100 syringes, 1 mL equals 100 units.
+- term: Peptide Bond
+  def: Link between two amino acids. The backbone of every peptide chain.
+- term: Protocol
+  def: Documented plan covering dose, frequency, route, mixing instructions, and duration.
+- term: Receptor
+  def: Cell protein a peptide binds to, triggering a downstream effect.
+- term: Reconstitution
+  def: Adding diluent to lyophilised powder to make a measurable liquid.
+- term: Stack
+  def: Multiple vials on one coordinated schedule. You control dose and timing for each compound.
+- term: SubQ / Subcutaneous
+  def: Injection into fat under the skin. Default route for most peptide protocols.
+- term: TB-500 (Thymosin Beta-4 Fragment)
+  def: Synthetic fragment related to Thymosin Beta-4. Studied for cell migration and wound healing.
+- term: U-100 Syringe
+  def: Insulin syringe where 100 units equals 1 mL.

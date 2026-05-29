@@ -1,0 +1,45 @@
+---
+layout: default
+title: "Page Not Found"
+permalink: /404.html
+description: "This page doesn't exist on peptide.diy. Browse protocols, guides, or use search to find what you need."
+sitemap: false
+---
+
+  <div class="content-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span>›</span><span>404</span></div>
+      <div class="eyebrow">Error</div>
+      <h1>Page Not Found</h1>
+      <p>That URL isn't on the site. It may have moved, or the link was wrong.</p>
+    </div>
+  </div>
+  <div class="content-body">
+    <div class="container" style="max-width:640px">
+      <div class="callout" style="margin-bottom:2rem">
+        <strong>Try one of these</strong>
+        Use search to find a peptide or term, or jump straight to a section below.
+      </div>
+      <div class="grid-3" style="margin-bottom:2rem">
+        <a class="card" href="{{ '/' | relative_url }}">
+          <div class="card-label">Home</div>
+          <h3>Back to Home</h3>
+          <p>Featured protocols, guides, and the dosage calculator.</p>
+          <span class="card-link">Go home →</span>
+        </a>
+        <a class="card" href="{{ '/single-peptides.html' | relative_url }}">
+          <div class="card-label">Protocols</div>
+          <h3>Single Peptides</h3>
+          <p>Browse individual peptide dosage protocols.</p>
+          <span class="card-link">Browse →</span>
+        </a>
+        <button type="button" class="card card-btn" onclick="openSearch()">
+          <div class="card-label">Search</div>
+          <h3>Search the Site</h3>
+          <p>Find protocols, guides, and glossary terms.</p>
+          <span class="card-link">Open search →</span>
+        </button>
+      </div>
+      <p style="color:var(--text2);font-size:.92rem">Still stuck? <a href="{{ '/contact.html' | relative_url }}">Contact us</a> and tell us what you were looking for.</p>
+    </div>
+  </div>

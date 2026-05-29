@@ -1,0 +1,32 @@
+---
+layout: null
+permalink: /search.json
+sitemap: false
+---
+[
+{%- assign comma = false -%}
+{%- for p in site.pages -%}
+{%- if p.searchable == true -%}
+{%- if comma -%},{%- endif -%}
+{
+  "title": {{ p.title | jsonify }},
+  "url": {{ p.url | jsonify }},
+  "description": {{ p.description | default: "" | strip | jsonify }},
+  "type": {{ p.search_type | default: "page" | jsonify }},
+  "tags": {{ p.search_tags | default: "" | jsonify }}
+}
+{%- assign comma = true -%}
+{%- endif -%}
+{%- endfor -%}
+{%- for item in site.data.glossary_terms -%}
+{%- if comma -%},{%- endif -%}
+{
+  "title": {{ item.term | jsonify }},
+  "url": "/glossary.html",
+  "description": {{ item.def | jsonify }},
+  "type": "glossary",
+  "tags": {{ item.term | jsonify }}
+}
+{%- assign comma = true -%}
+{%- endfor -%}
+]

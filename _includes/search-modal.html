@@ -1,0 +1,13 @@
+<div class="search-overlay" id="search-overlay" aria-hidden="true">
+  <div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
+    <div class="search-header">
+      <label class="search-label" for="site-search-input" id="search-title">Search peptide.diy</label>
+      <button type="button" class="search-close" onclick="closeSearch()" aria-label="Close search">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l12 12M16 4L4 16"/></svg>
+      </button>
+    </div>
+    <input type="search" id="site-search-input" class="search-input" placeholder="Peptide, guide, or glossary term…" autocomplete="off" spellcheck="false">
+    <div class="search-meta" id="search-meta">Type to search protocols, guides, and glossary terms.</div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
