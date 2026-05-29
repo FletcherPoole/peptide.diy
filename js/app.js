@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", initCalculators);
 
 // ── PROTOCOL SIDEBAR ACTIVE STATE ──
 function initProtocolSidebar() {
-  const nav = document.querySelector(".protocol-nav");
+  const nav = document.querySelector(".protocol-nav-links");
   if (!nav) return;
   const links = [...nav.querySelectorAll('a[href^="#"]')];
   const sections = links
