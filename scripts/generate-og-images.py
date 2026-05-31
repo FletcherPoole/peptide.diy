@@ -28,6 +28,11 @@ PROTOCOLS = [
         "category": "Single · Skin & Anti-Ageing",
     },
     {
+        "slug": "melanotan-ii-10mg",
+        "title": "Melanotan II 10mg",
+        "category": "Single · Skin & Pigmentation",
+    },
+    {
         "slug": "retatrutide",
         "title": "Retatrutide 20mg",
         "category": "Single · Metabolic",
