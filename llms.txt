@@ -9,7 +9,7 @@ This site uses British English. Protocol pages include reconstitution maths, dos
 - [Single peptide protocols](https://www.peptide.diy/single-peptides.html): Browse individual peptide dosage protocols.
 - [GHK-Cu 50mg protocol](https://www.peptide.diy/ghk-cu-50mg.html): Skin and anti-ageing copper peptide protocol with injectable and topical routes.
 - [GHK-Cu 100mg protocol](https://www.peptide.diy/ghk-cu-100mg.html): Higher-dose GHK-Cu protocol with reconstitution and cycle guidance.
-- [Melanotan II 10mg protocol](https://www.peptide.diy/melanotan-ii-10mg.html): SubQ titration, maintenance dosing, and nasal options for pigmentation research.
+- [Melanotan II 10mg protocol](https://www.peptide.diy/melanotan-ii-10mg.html): Tanning-day-only dosing (no loading phase), 2 mL recon, slow titration with UV.
 - [Peptide blend protocols](https://www.peptide.diy/blends.html): Pre-mixed multi-peptide vial protocols.
 - [Peptide stack protocols](https://www.peptide.diy/stacks.html): Multi-vial coordinated schedules.
 - [Dosage calculator](https://www.peptide.diy/calculator.html): Free reconstitution calculator for injections, moisturisers, and nasal sprays.
