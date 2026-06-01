@@ -62,7 +62,7 @@
 </script>
 {% endunless %}
 
-{% if page.last_updated and page.noindex != true %}
+{% if page.last_updated and page.noindex != true and page.title != 'FAQ' %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
