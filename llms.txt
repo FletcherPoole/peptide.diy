@@ -12,7 +12,7 @@ This site uses British English. Protocol pages include reconstitution maths, dos
 - [Melanotan II 10mg protocol](https://www.peptide.diy/melanotan-ii-10mg.html): Tanning-day-only dosing (no loading phase), 2 mL recon, slow titration with UV.
 - [Peptide blend protocols](https://www.peptide.diy/blends.html): Pre-mixed multi-peptide vial protocols.
 - [Peptide stack protocols](https://www.peptide.diy/stacks.html): Multi-vial coordinated schedules.
-- [Dosage calculator](https://www.peptide.diy/calculator.html): Free reconstitution calculator for injections, moisturisers, and nasal sprays.
+- [Dosage calculator](https://www.peptide.diy/calculator.html): Free peptide reconstitution calculator for injections, moisturisers, and nasal sprays.
 
 ## Guides
 

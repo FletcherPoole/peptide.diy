@@ -1,0 +1,28 @@
+<div class="protocol-footer content-section">
+  <h2>Next steps</h2>
+  <div class="grid-2 protocol-footer-grid">
+    <div>
+      <h3>Guides &amp; tools</h3>
+      <ul class="protocol-footer-links">
+        <li><a href="{{ '/beginners-guide.html' | relative_url }}">Beginner&rsquo;s guide</a></li>
+        <li><a href="{{ '/reconstitution-guide.html' | relative_url }}">Reconstitution guide</a></li>
+        <li><a href="{{ '/deployment-methods.html' | relative_url }}">Deployment methods</a></li>
+        <li><a href="{{ '/storage-guide.html' | relative_url }}">Storage guide</a></li>
+        <li><a href="{{ '/calculator.html' | relative_url }}"><strong>Peptide reconstitution calculator</strong></a> &mdash; check your maths</li>
+      </ul>
+    </div>
+    {% if page.related_protocols.size > 0 %}
+    <div>
+      <h3>Related protocols</h3>
+      <ul class="protocol-footer-links">
+        {% for related in page.related_protocols %}
+        <li><a href="{{ related.url | relative_url }}">{{ related.title }}</a></li>
+        {% endfor %}
+        <li><a href="{{ '/single-peptides.html' | relative_url }}">All single peptides</a></li>
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  {% include protocol-newsletter.html %}
+  <a class="btn btn-outline" style="margin-top:1.25rem" href="{{ '/single-peptides.html' | relative_url }}">&larr; Back to Single Peptides</a>
+</div>

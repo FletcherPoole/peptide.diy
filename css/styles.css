@@ -676,6 +676,31 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 .syringe-info{flex:1}
 .syringe-table-wrap{overflow-x:auto}
 
+/* ── PROTOCOL / GUIDE FOOTERS ── */
+.protocol-footer,.guide-funnel{
+  margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);
+}
+.protocol-footer h2,.guide-funnel h2{margin-bottom:1.25rem}
+.protocol-footer h3,.guide-funnel h3{font-size:1rem;margin-bottom:.65rem}
+.protocol-footer-links,.guide-funnel-links{list-style:none;padding:0;margin:0}
+.protocol-footer-links li,.guide-funnel-links li{margin-bottom:.45rem;font-size:.93rem;line-height:1.5}
+.protocol-footer-links a,.guide-funnel-links a{color:var(--text2)}
+.protocol-footer-links a:hover,.guide-funnel-links a:hover{color:var(--accent)}
+.protocol-newsletter{
+  margin-top:1.75rem;padding:1.25rem 1.35rem;width:100%;
+  background:var(--bg4);border:1px solid var(--border);border-radius:var(--r2);
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;
+}
+.protocol-newsletter-copy{flex:1;min-width:200px}
+.protocol-newsletter h3{margin:0 0 .35rem;font-size:1rem}
+.protocol-newsletter p{margin:0;font-size:.88rem;color:var(--text2)}
+@media(max-width:640px){
+  .content-body .content-section:has(> table){
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+  }
+  .content-body .content-section > table{min-width:520px}
+}
+
 /* ── FOOTER ── */
 footer{
   background:var(--bg2);border-top:1px solid var(--border);

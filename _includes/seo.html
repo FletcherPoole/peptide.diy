@@ -4,6 +4,10 @@
 
   {% assign full_title = page.seo_title | default: "DIY Peptide Education | Research-Led Protocols" | append: " | peptide.diy" %}
 
+{% elsif page.search_type == 'protocol' %}
+
+  {% assign full_title = seo_title | append: " | Dosage & Reconstitution | peptide.diy" %}
+
 {% else %}
 
   {% assign full_title = seo_title | append: " | peptide.diy" %}
@@ -39,6 +43,18 @@
 <meta name="description" content="{{ meta_desc | strip | truncate: 160, '' }}">
 
 <meta name="author" content="peptide.diy">
+
+{% if site.google_site_verification != blank and site.google_site_verification != "" %}
+
+<meta name="google-site-verification" content="{{ site.google_site_verification }}">
+
+{% endif %}
+
+{% if site.bing_site_verification != blank and site.bing_site_verification != "" %}
+
+<meta name="msvalidate.01" content="{{ site.bing_site_verification }}">
+
+{% endif %}
 
 {% if page.noindex or page.redirect_to %}
 
