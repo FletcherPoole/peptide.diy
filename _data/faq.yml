@@ -37,6 +37,8 @@
 
 - title: Our Protocol Pages
   items:
+    - q: Which single-peptide protocols are live?
+      a_html: "Full write-ups: [GHK-Cu 50 mg](/ghk-cu-50mg.html), [GHK-Cu 100 mg](/ghk-cu-100mg.html), and [Melanotan II 10 mg](/melanotan-ii-10mg.html). More compounds appear on [Single Peptides](/single-peptides.html) as we finish each guide."
     - q: What's on a protocol page?
       a: Compound overview, dosing schedule, reconstitution steps, supplies list, safety notes with citations. Syringe visuals where they help. Same layout across compounds so you know where to look.
     - q: Are these peer-reviewed journal articles?

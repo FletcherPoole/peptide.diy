@@ -42,6 +42,14 @@
   def: Measures biological potency, not mass. Used for HGH and HCG.
 - term: Lyophilisation
   def: Freeze-drying. Removes water under vacuum to make stable powder.
+- term: KPV
+  def: Tripeptide fragment (Lys-Pro-Val) studied for anti-inflammatory and skin-calming effects.
+- term: Melanogenesis
+  def: Production of melanin pigment in skin. Melanocortin peptides stimulate this pathway; UV accelerates visible tanning.
+- term: Melanotan I (Afamelanotide)
+  def: Linear melanocortin agonist used clinically for photoprotection in some erythropoietic protoporphyria cases.
+- term: Melanotan II
+  def: Cyclic melanocortin agonist studied for pigmentation. Research dosing often pairs with tanning days and UV exposure.
 - term: mcg (Microgram)
   def: One thousandth of a milligram. Many doses are in mcg.
 - term: mg (Milligram)
