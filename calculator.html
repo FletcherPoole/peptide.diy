@@ -84,6 +84,10 @@ search_tags: "calculator reconstitution dosage syringe units ml peptide calculat
                 <label for="c-bac-water">BAC water for reconstitution (mL)</label>
                 <input type="number" id="c-bac-water" placeholder="e.g. 2" step="any" min="0" inputmode="decimal" required>
               </div>
+              <div class="form-group">
+                <label for="c-per-week">Doses per week <span style="text-transform:none;letter-spacing:0;color:var(--text3);font-weight:400">(optional — estimates how long a vial lasts)</span></label>
+                <input type="number" id="c-per-week" placeholder="e.g. 7" step="any" min="0" inputmode="decimal">
+              </div>
             </div>
             <div>
               <div class="form-group">
@@ -117,12 +121,35 @@ search_tags: "calculator reconstitution dosage syringe units ml peptide calculat
                 <div class="res-unit" id="c-res-label-3">total</div>
               </div>
             </div>
+            <div class="syringe-viz" id="c-syringe" hidden>
+              <svg viewBox="0 0 260 48" role="img" aria-label="Syringe fill illustration" class="syringe-svg-viz">
+                <!-- barrel -->
+                <rect x="6" y="14" width="210" height="20" rx="3" fill="var(--bg3)" stroke="var(--border2)"/>
+                <!-- fill -->
+                <rect id="c-syringe-fill" x="8" y="16" width="0" height="16" rx="2" fill="var(--accent)"/>
+                <!-- tick marks -->
+                <g stroke="var(--text3)" stroke-width="1">
+                  <line x1="8"   y1="10" x2="8"   y2="14"/><line x1="60"  y1="10" x2="60"  y2="14"/>
+                  <line x1="112" y1="10" x2="112" y2="14"/><line x1="164" y1="10" x2="164" y2="14"/>
+                  <line x1="214" y1="10" x2="214" y2="14"/>
+                </g>
+                <!-- plunger + needle -->
+                <rect x="216" y="18" width="10" height="12" rx="2" fill="var(--text3)"/>
+                <line x1="226" y1="24" x2="252" y2="24" stroke="var(--text3)" stroke-width="2"/>
+              </svg>
+              <div class="syringe-viz-label" id="c-syringe-label"></div>
+            </div>
             <div class="calc-result-footer">
               <div class="calc-total-doses">
                 <div class="calc-total-label" id="c-res-total-label">Total doses</div>
                 <div class="calc-total-val" id="c-res-doses">-</div>
               </div>
               <p id="c-res-notes" class="calc-notes"></p>
+            </div>
+            <p id="c-res-duration" class="calc-duration" hidden></p>
+            <div class="calc-actions">
+              <button type="button" class="btn btn-ghost" id="c-copy-link" onclick="copyCalcLink(this)">Copy shareable link</button>
+              <button type="button" class="btn btn-ghost" onclick="downloadCalcCard()">Save as image</button>
             </div>
           </div>
         </form>

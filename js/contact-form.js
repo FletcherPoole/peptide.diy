@@ -55,6 +55,11 @@
         const data = await response.json().catch(() => ({}));
 
         if (response.ok) {
+          if (typeof gtag === "function") {
+            gtag("event", "contact_submit", {
+              subject: subjectSelect ? subjectSelect.value : "unknown",
+            });
+          }
           form.reset();
           if (subjectSelect && subjectHidden) {
             subjectHidden.value = "peptide.diy: " + subjectSelect.value;

@@ -171,6 +171,8 @@ function computeInjection({ amountVal, amountUnit, bacWater, doseVal, doseUnit }
     box3,
     totalDoses,
     notes,
+    unitsU100: round1(volMl * 100),
+    isInjection: true,
   };
 }
 
@@ -284,6 +286,7 @@ function readCalcForm() {
     moisturiserG: parseFloat(document.getElementById("c-moisturiser").value),
     salineMl: parseFloat(document.getElementById("c-saline").value),
     sprayVolMl: parseFloat(document.getElementById("c-spray-vol").value),
+    perWeek: parseFloat(document.getElementById("c-per-week").value),
   };
 }
 
@@ -312,7 +315,50 @@ function renderCalcResult(result) {
   const notesEl = document.getElementById("c-res-notes");
   notesEl.textContent = result.notes.length ? result.notes.join(" ") : "";
 
+  updateSyringe(result);
+  updateDuration(result);
   resultEl.classList.add("show");
+  syncCalcUrl();
+  trackCalcUsed();
+}
+
+// ── SYRINGE FILL VISUAL (injection only) ──
+function updateSyringe(result) {
+  const wrap = document.getElementById("c-syringe");
+  if (!wrap) return;
+  const fill = document.getElementById("c-syringe-fill");
+  const label = document.getElementById("c-syringe-label");
+  if (!result.isInjection || !(result.unitsU100 > 0)) {
+    wrap.hidden = true;
+    return;
+  }
+  const BARREL = 206; // px of inner barrel = 100 U-100 units
+  const units = result.unitsU100;
+  const pct = Math.max(0, Math.min(units, 100)) / 100;
+  fill.setAttribute("width", (pct * BARREL).toFixed(1));
+  label.textContent =
+    units > 100
+      ? `Draw ${units} units — exceeds one U-100 syringe (needs multiple draws)`
+      : `Draw to ${units} units on a U-100 (1 mL) insulin syringe`;
+  wrap.hidden = false;
+}
+
+// ── VIAL DURATION (barebones scheduler) ──
+function updateDuration(result) {
+  const el = document.getElementById("c-res-duration");
+  if (!el) return;
+  const perWeek = parseFloat(document.getElementById("c-per-week").value);
+  const doses = Number(result.totalDoses);
+  if (!(perWeek > 0) || !(doses > 0)) {
+    el.hidden = true;
+    return;
+  }
+  const weeks = doses / perWeek;
+  const weeksText = weeks >= 1 ? `${round1(weeks)} weeks` : `${round1(weeks * 7)} days`;
+  el.innerHTML = `This vial lasts <strong>~${weeksText}</strong> at ${round1(perWeek)} ${
+    doses === 1 ? "dose" : "doses"
+  }/week (${doses} total ÷ ${round1(perWeek)}).`;
+  el.hidden = false;
 }
 
 function calcFull() {
@@ -328,6 +374,142 @@ function calcFull() {
   }
 
   renderCalcResult(result);
+}
+
+// ── SHAREABLE STATE (deep-link + persistence via URL) ──
+const CALC_URL_FIELDS = {
+  m: "c-method",
+  amt: "c-pep-amount",
+  au: "c-pep-unit",
+  bac: "c-bac-water",
+  dose: "c-dose",
+  du: "c-dose-unit",
+  pw: "c-per-week",
+  moist: "c-moisturiser",
+  sal: "c-saline",
+  spray: "c-spray-vol",
+};
+
+function syncCalcUrl() {
+  if (!document.getElementById("c-method")) return;
+  const params = new URLSearchParams();
+  Object.entries(CALC_URL_FIELDS).forEach(([key, id]) => {
+    const el = document.getElementById(id);
+    if (el && el.value !== "" && el.value != null) params.set(key, el.value);
+  });
+  const query = params.toString();
+  const url = query ? `${location.pathname}?${query}` : location.pathname;
+  history.replaceState(null, "", url);
+}
+
+function prefillCalcFromUrl() {
+  const methodSelect = document.getElementById("c-method");
+  if (!methodSelect) return;
+  const params = new URLSearchParams(location.search);
+  if (![...params.keys()].length) return;
+
+  // method first so the right panels/units are set up
+  if (params.has("m")) {
+    methodSelect.value = params.get("m");
+    setCalcMethod(methodSelect.value);
+  }
+  Object.entries(CALC_URL_FIELDS).forEach(([key, id]) => {
+    if (key === "m" || !params.has(key)) return;
+    const el = document.getElementById(id);
+    if (el) el.value = params.get(key);
+  });
+
+  // auto-calculate if the core fields are present
+  const hasCore = ["amt", "bac", "dose"].every((k) => params.has(k));
+  if (hasCore) calcFull();
+}
+
+function copyCalcLink(btn) {
+  syncCalcUrl();
+  const done = (ok) => {
+    if (!btn) return;
+    const original = btn.dataset.label || btn.textContent;
+    btn.dataset.label = original;
+    btn.textContent = ok ? "Link copied ✓" : "Press Ctrl+C to copy";
+    setTimeout(() => {
+      btn.textContent = btn.dataset.label;
+    }, 2200);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(location.href).then(() => done(true), () => done(false));
+  } else {
+    done(false);
+  }
+  trackCalcEvent("calculator_share_link");
+}
+
+// ── EXPORT RESULT AS IMAGE (canvas, no external libs) ──
+function downloadCalcCard() {
+  const txt = (id) => (document.getElementById(id) || {}).textContent || "";
+  const canvas = document.createElement("canvas");
+  const W = 800, H = 450, scale = 2;
+  canvas.width = W * scale;
+  canvas.height = H * scale;
+  const ctx = canvas.getContext("2d");
+  ctx.scale(scale, scale);
+
+  ctx.fillStyle = "#0b0f18";
+  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = "#5ef6c8";
+  ctx.fillRect(0, 0, W, 6);
+
+  ctx.textBaseline = "top";
+  ctx.fillStyle = "#f0ede6";
+  ctx.font = "600 30px Georgia, serif";
+  ctx.fillText("peptide.diy", 48, 40);
+  ctx.fillStyle = "#8892a0";
+  ctx.font = "14px Arial, sans-serif";
+  ctx.fillText("Reconstitution result", 48, 80);
+
+  const stats = [
+    [txt("c-res-conc"), txt("c-res-label-1")],
+    [txt("c-res-vol"), txt("c-res-label-2")],
+    [txt("c-res-units"), txt("c-res-label-3")],
+    [txt("c-res-doses"), txt("c-res-total-label")],
+  ];
+  let x = 48, y = 140;
+  stats.forEach(([val, label], i) => {
+    const col = i % 2, row = Math.floor(i / 2);
+    const cx = 48 + col * 370, cy = 140 + row * 130;
+    ctx.fillStyle = "#131923";
+    ctx.fillRect(cx, cy, 340, 110);
+    ctx.fillStyle = "#5ef6c8";
+    ctx.font = "700 34px Georgia, serif";
+    ctx.fillText(val || "-", cx + 20, cy + 22);
+    ctx.fillStyle = "#8892a0";
+    ctx.font = "13px Arial, sans-serif";
+    ctx.fillText((label || "").toUpperCase(), cx + 20, cy + 74);
+  });
+
+  const dur = document.getElementById("c-res-duration");
+  ctx.fillStyle = "#9ea8b5";
+  ctx.font = "13px Arial, sans-serif";
+  if (dur && !dur.hidden) ctx.fillText(dur.textContent.slice(0, 90), 48, 410);
+  ctx.fillStyle = "#6b7785";
+  ctx.font = "12px Arial, sans-serif";
+  ctx.textAlign = "right";
+  ctx.fillText("peptide.diy/calculator · educational, not medical advice", W - 48, 414);
+  ctx.textAlign = "left";
+
+  const link = document.createElement("a");
+  link.download = "peptide-calc.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+  trackCalcEvent("calculator_save_image");
+}
+
+// ── ANALYTICS EVENTS ──
+function trackCalcEvent(name, params) {
+  if (typeof gtag === "function") gtag("event", name, params || {});
+}
+function trackCalcUsed() {
+  const m = document.getElementById("c-method");
+  trackCalcEvent("calculator_used", { method: m ? m.value : "home" });
 }
 
 function setCalcMethod(method) {
@@ -392,6 +574,7 @@ function calcHome() {
   document.getElementById(`${prefix}-res-units`).textContent = result.box3.replace(" U-100", "");
   document.getElementById(`${prefix}-res-doses`).textContent = result.totalDoses;
   resultEl.classList.add("show");
+  trackCalcEvent("calculator_used", { method: "home" });
 }
 
 function initCalculators() {
@@ -413,6 +596,8 @@ function initCalculators() {
       calcFull();
     }
   });
+
+  prefillCalcFromUrl();
 }
 
 document.addEventListener("DOMContentLoaded", initCalculators);

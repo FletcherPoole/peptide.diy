@@ -9,7 +9,7 @@
   "@id": {{ org_id | jsonify }},
   "name": "peptide.diy",
   "url": {{ site_url | jsonify }},
-  "logo": {{ "/og-image.png" | absolute_url | jsonify }},
+  "logo": {{ "/og-image.jpg" | absolute_url | jsonify }},
   "description": {{ site.description | jsonify }}
 }
 </script>
@@ -72,7 +72,7 @@
   "url": {{ canonical | jsonify }},
   "image": {{ og_image | jsonify }},
   "dateModified": {{ page.last_updated | date: "%Y-%m-%d" | jsonify }},
-  "datePublished": {{ page.last_updated | date: "%Y-%m-%d" | jsonify }},
+  "datePublished": {{ page.date_published | default: page.last_updated | date: "%Y-%m-%d" | jsonify }},
   "author": {
     "@type": "Organization",
     "@id": {{ org_id | jsonify }},
@@ -84,7 +84,7 @@
     "name": "peptide.diy",
     "logo": {
       "@type": "ImageObject",
-      "url": {{ "/og-image.png" | absolute_url | jsonify }}
+      "url": {{ "/og-image.jpg" | absolute_url | jsonify }}
     }
   },
   "mainEntityOfPage": {
@@ -115,6 +115,29 @@
   },
   "publisher": { "@id": {{ org_id | jsonify }} },
   "inLanguage": "en-GB"
+}
+</script>
+{% endif %}
+
+{% if page.howto_steps %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ page.howto_name | default: page.title | jsonify }},
+  "description": {{ meta_desc | strip | jsonify }},
+  "totalTime": {{ page.howto_time | default: "PT15M" | jsonify }},
+  "step": [
+    {% for step in page.howto_steps %}
+      {% unless forloop.first %},{% endunless %}
+      {
+        "@type": "HowToStep",
+        "position": {{ forloop.index }},
+        "name": {{ step.name | jsonify }},
+        "text": {{ step.text | jsonify }}
+      }
+    {% endfor %}
+  ]
 }
 </script>
 {% endif %}

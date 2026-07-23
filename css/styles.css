@@ -350,6 +350,24 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 }
 .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .res-box{text-align:center;padding:1rem;background:var(--bg3);border-radius:var(--r2)}
+/* syringe fill visual */
+.syringe-viz{margin-top:1.25rem}
+.syringe-svg-viz{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
+.syringe-svg-viz rect#c-syringe-fill{transition:width .4s ease}
+.syringe-viz-label{
+  text-align:center;margin-top:.4rem;
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.05em;color:var(--text3);
+}
+/* vial-duration (scheduler) */
+.calc-duration{
+  margin:1rem 0 0;padding:.7rem 1rem;border-radius:var(--r2);
+  background:rgba(240,160,90,0.06);border:1px solid rgba(240,160,90,0.18);
+  font-size:.88rem;color:var(--text2);
+}
+.calc-duration strong{color:var(--accent2)}
+/* result action buttons */
+.calc-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.25rem}
+.calc-actions .btn{font-size:.78rem;padding:.5rem 1rem}
 .res-val{font-family:var(--font-head);font-size:1.8rem;font-weight:700;color:var(--accent)}
 .res-unit{font-family:var(--font-mono);font-size:.7rem;color:var(--text3);margin-top:.1rem}
 
@@ -707,6 +725,7 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 .protocol-footer-links li,.guide-funnel-links li{margin-bottom:.45rem;font-size:.93rem;line-height:1.5}
 .protocol-footer-links a,.guide-funnel-links a{color:var(--text2)}
 .protocol-footer-links a:hover,.guide-funnel-links a:hover{color:var(--accent)}
+.calc-cta{margin-top:1rem}
 .protocol-newsletter{
   margin-top:1.75rem;padding:1.25rem 1.35rem;width:100%;
   background:var(--bg4);border:1px solid var(--border);border-radius:var(--r2);

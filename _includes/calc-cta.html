@@ -1,0 +1,11 @@
+{% if page.calc %}
+{%- capture calc_qs -%}
+?m={{ page.calc.method | default: 'injection' }}
+{%- if page.calc.amount %}&amt={{ page.calc.amount }}{% endif -%}
+{%- if page.calc.unit %}&au={{ page.calc.unit }}{% endif -%}
+{%- if page.calc.bac %}&bac={{ page.calc.bac }}{% endif -%}
+{%- if page.calc.dose %}&dose={{ page.calc.dose }}{% endif -%}
+{%- if page.calc.dose_unit %}&du={{ page.calc.dose_unit }}{% endif -%}
+{%- endcapture -%}
+<a class="btn btn-primary calc-cta" href="{{ '/calculator.html' | relative_url }}{{ calc_qs }}">Open this vial in the calculator →</a>
+{% endif %}

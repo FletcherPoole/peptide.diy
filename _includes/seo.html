@@ -90,7 +90,7 @@
   {% assign og_slug = page.url | remove: '.html' | remove: '/' %}
   {% assign og_image = '/images/og/' | append: og_slug | append: '.png' | absolute_url %}
 {% else %}
-  {% assign og_image = '/og-image.png' | absolute_url %}
+  {% assign og_image = '/og-image.jpg' | absolute_url %}
 {% endif %}
 
 {% assign og_image_alt = page.og_image_alt | default: seo_title | default: page.title %}
