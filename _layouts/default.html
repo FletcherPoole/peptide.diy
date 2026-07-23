@@ -6,21 +6,37 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
+  // Consent Mode v2 — deny analytics/ads storage until the visitor opts in.
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
+  });
+  // Honour a previously granted choice before the banner script runs.
+  try {
+    if (localStorage.getItem('cookie-consent') === 'granted') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  } catch (e) {}
+
+  gtag('js', new Date());
   gtag('config', 'G-2978WV68T5');
 </script>
 {% include head.html %}
 {% include seo.html %}
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 {% include nav.html %}
 {% include mobile-nav.html %}
-<main>
+<main id="main">
 {{ content }}
 </main>
 {% include footer.html %}
 {% include search-modal.html %}
+{% include cookie-consent.html %}
 <script src="{{ '/js/app.js' | relative_url }}" defer></script>
 <script src="{{ '/js/search.js' | relative_url }}" defer></script>
 <script src="{{ '/js/beehiiv-form.js' | relative_url }}" defer></script>

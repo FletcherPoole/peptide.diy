@@ -1,15 +1,97 @@
 // ── MOBILE MENU ──
 function toggleMobileMenu() {
-  document.getElementById("mobile-nav").classList.toggle("open");
+  const nav = document.getElementById("mobile-nav");
+  const open = nav.classList.toggle("open");
+  const btn = document.querySelector(".menu-toggle");
+  if (btn) btn.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("menu-open", open);
+  if (open) {
+    const firstLink = nav.querySelector(".mobile-link");
+    if (firstLink) firstLink.focus();
+  }
 }
 function closeMobileMenu() {
-  document.getElementById("mobile-nav").classList.remove("open");
+  const nav = document.getElementById("mobile-nav");
+  if (!nav.classList.contains("open")) return;
+  nav.classList.remove("open");
+  const btn = document.querySelector(".menu-toggle");
+  if (btn) btn.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
 }
+
+// ── DESKTOP NAV DROPDOWNS (click + keyboard) ──
+function initNavDropdowns() {
+  const items = [...document.querySelectorAll("#main-nav .nav-item")];
+  const closeAll = (except) => {
+    items.forEach((item) => {
+      if (item === except) return;
+      item.classList.remove("open");
+      const b = item.querySelector(".nav-btn");
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  };
+  items.forEach((item) => {
+    const btn = item.querySelector(".nav-btn");
+    if (!btn) return;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+      closeAll(item);
+    });
+  });
+  document.addEventListener("click", () => closeAll(null));
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const openItem = items.find((i) => i.classList.contains("open"));
+    if (openItem) {
+      openItem.classList.remove("open");
+      const b = openItem.querySelector(".nav-btn");
+      if (b) {
+        b.setAttribute("aria-expanded", "false");
+        b.focus();
+      }
+    }
+    closeMobileMenu();
+  });
+}
+document.addEventListener("DOMContentLoaded", initNavDropdowns);
 
 // ── FAQ ACCORDION ──
 function toggleFaq(el) {
-  el.parentElement.classList.toggle("open");
+  const item = el.closest(".faq-item");
+  const open = item.classList.toggle("open");
+  el.setAttribute("aria-expanded", String(open));
 }
+
+// ── COOKIE CONSENT ──
+function setCookieConsent(choice) {
+  try {
+    localStorage.setItem("cookie-consent", choice);
+  } catch (e) {}
+  if (choice === "granted" && typeof gtag === "function") {
+    gtag("consent", "update", { analytics_storage: "granted" });
+  }
+  const banner = document.getElementById("cookie-consent");
+  if (banner) {
+    banner.classList.remove("show");
+    banner.hidden = true;
+  }
+}
+function initCookieConsent() {
+  const banner = document.getElementById("cookie-consent");
+  if (!banner) return;
+  let choice = null;
+  try {
+    choice = localStorage.getItem("cookie-consent");
+  } catch (e) {}
+  if (!choice) {
+    banner.hidden = false;
+    // allow the element to render before transitioning in
+    requestAnimationFrame(() => banner.classList.add("show"));
+  }
+}
+document.addEventListener("DOMContentLoaded", initCookieConsent);
 
 // ── PEPTIDE CALCULATOR ──
 function formatVolumeMl(volMl) {

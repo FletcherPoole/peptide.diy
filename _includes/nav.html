@@ -6,11 +6,11 @@
     </a>
     <div class="nav-links">
       <div class="nav-item">
-        <button class="nav-btn">
+        <button type="button" class="nav-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd-protocols">
           Protocols
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="2,4 6,8 10,4"/></svg>
         </button>
-        <div class="dropdown">
+        <div class="dropdown" id="dd-protocols">
           <a class="dd-link" href="{{ '/single-peptides.html' | relative_url }}">Peptides</a>
           <a class="dd-link" href="{{ '/blends.html' | relative_url }}">Blends</a>
           <a class="dd-link" href="{{ '/stacks.html' | relative_url }}">Stacks</a>
@@ -18,11 +18,11 @@
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">
+        <button type="button" class="nav-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd-university">
           University
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="2,4 6,8 10,4"/></svg>
         </button>
-        <div class="dropdown">
+        <div class="dropdown" id="dd-university">
           <a class="dd-link" href="{{ '/beginners-guide.html' | relative_url }}">Complete Beginner</a>
           <a class="dd-link" href="{{ '/reconstitution-guide.html' | relative_url }}">Reconstituting</a>
           <a class="dd-link" href="{{ '/storage-guide.html' | relative_url }}">Storage</a>
@@ -34,11 +34,11 @@
         </div>
       </div>
       <div class="nav-item">
-        <button class="nav-btn">
+        <button type="button" class="nav-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd-about">
           Peptide.diy
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="2,4 6,8 10,4"/></svg>
         </button>
-        <div class="dropdown">
+        <div class="dropdown" id="dd-about">
           <a class="dd-link" href="{{ '/about.html' | relative_url }}">The Mission</a>
           <a class="dd-link" href="{{ '/editorial-policy.html' | relative_url }}">Our Standards</a>
           <a class="dd-link" href="{{ '/contact.html' | relative_url }}">Contact Us</a>
@@ -49,8 +49,8 @@
       </button>
       <a class="nav-cta" href="{{ '/calculator.html' | relative_url }}">Calculator</a>
     </div>
-    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2">
+    <button type="button" class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/>
       </svg>
     </button>

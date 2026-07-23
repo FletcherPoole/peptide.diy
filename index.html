@@ -149,6 +149,7 @@ description: "Peptide protocols with dosages, cycling, reconstitution and risks.
         <p>Missing something here? <a href="{{ '/contact.html' | relative_url }}">Request a compound to be added</a>, or use our calculator to create one on your own.</p>
       </div>
       <div class="calc-wrapper">
+        <form onsubmit="calcHome();return false;">
         <div class="calc-grid">
           <div>
             <div class="form-group">
@@ -178,9 +179,10 @@ description: "Peptide protocols with dosages, cycling, reconstitution and risks.
               </div>
             </div>
         <p id="h-error" class="calc-error" hidden role="alert"></p>
-            <button type="button" class="btn btn-primary" style="width:100%;margin-top:.3rem" onclick="calcHome()">Calculate</button>
+            <button type="submit" class="btn btn-primary" style="width:100%;margin-top:.3rem">Calculate</button>
           </div>
         </div>
+        </form>
         <div class="calc-result" id="h-result" role="region" aria-live="polite" aria-label="Calculation results">
           <div class="result-grid">
             <div class="res-box">

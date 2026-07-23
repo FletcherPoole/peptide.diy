@@ -7,7 +7,7 @@
   --border2: rgba(94,246,200,0.2);
   --text: #ddd8ce;
   --text2: #9ea8b5;
-  --text3: #6b7785;
+  --text3: #8892a0;
   --head: #f0ede6;
   --accent: #5ef6c8;
   --accent2: #f0a05a;
@@ -47,6 +47,26 @@ body::before{
 }
 a{color:var(--accent);text-decoration:none;transition:color .2s}
 a:hover{color:var(--accent2)}
+
+/* ── FOCUS VISIBILITY (keyboard) ── */
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.form-group input:focus-visible,.form-group select:focus-visible,
+.contact-form textarea:focus-visible,.search-input:focus-visible{
+  outline:2px solid var(--accent);outline-offset:1px;
+}
+
+/* ── SKIP LINK ── */
+.skip-link{
+  position:fixed;left:.75rem;top:-100px;z-index:5000;
+  background:var(--accent);color:var(--bg);
+  padding:.6rem 1.1rem;border-radius:0 0 var(--r2) var(--r2);
+  font-weight:700;font-size:.85rem;letter-spacing:.02em;
+  transition:top .18s;
+}
+.skip-link:focus{top:0}
+
+/* ── SCROLL LOCK (open mobile menu) ── */
+body.menu-open{overflow:hidden}
 h1,h2,h3,h4,h5{font-family:var(--font-head);font-weight:600;color:var(--head);line-height:1.2}
 h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700}
 h2{font-size:clamp(1.6rem,3vw,2.4rem)}
@@ -94,7 +114,7 @@ table tr:hover td{background:var(--bg4)}
 }
 .nav-btn:hover,.nav-btn.active{color:var(--accent);background:rgba(94,246,200,0.06)}
 .nav-btn svg{width:12px;height:12px;transition:transform .2s}
-.nav-item:hover .nav-btn svg{transform:rotate(180deg)}
+.nav-item:hover .nav-btn svg,.nav-item.open .nav-btn svg{transform:rotate(180deg)}
 .dropdown{
   position:absolute;top:calc(100% + 8px);left:0;min-width:220px;
   background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
@@ -102,7 +122,7 @@ table tr:hover td{background:var(--bg4)}
   opacity:0;visibility:hidden;transform:translateY(-4px);
   transition:all .2s;z-index:200;
 }
-.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-item:hover .dropdown,.nav-item.open .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
 .dd-link{
   display:block;padding:.55rem .9rem;border-radius:var(--r2);
   font-size:.87rem;color:var(--text2);
@@ -617,7 +637,8 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
 }
 .faq-item:hover{border-color:var(--border2)}
 .faq-q{
-  padding:1rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  width:100%;text-align:left;border:none;font-family:inherit;
+  padding:1rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;
   font-weight:700;color:var(--head);font-size:.95rem;
   user-select:none;background:var(--bg3);
 }
@@ -628,7 +649,7 @@ a.card,a.proto-card{display:block;text-decoration:none;color:inherit}
   transition:max-height .3s ease,padding .3s;
   font-size:.93rem;color:var(--text2);background:var(--card);
 }
-.faq-item.open .faq-a{padding:1rem 1.2rem;max-height:800px}
+.faq-item.open .faq-a{padding:1rem 1.2rem;max-height:1500px}
 
 /* ── PROTOCOL CARDS ── */
 .proto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
@@ -926,7 +947,7 @@ footer{
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr}
-  .hero-visual{display:none}
+  .hero-visual{margin-top:.5rem}
   .why-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
   .newsletter-band-grid{grid-template-columns:1fr}
@@ -1001,3 +1022,21 @@ body.search-open{overflow:hidden}
   font:inherit;cursor:pointer;
 }
 .card-btn:hover{border-color:var(--border2)}
+
+/* ── COOKIE CONSENT ── */
+.cookie-consent{
+  position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:4000;
+  max-width:640px;margin:0 auto;
+  background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);
+  box-shadow:var(--shadow);padding:1.1rem 1.25rem;
+  display:none;flex-wrap:wrap;gap:.9rem 1.25rem;align-items:center;justify-content:space-between;
+}
+.cookie-consent.show{display:flex;animation:fadeIn .3s ease}
+.cookie-consent-text{flex:1;min-width:240px;font-size:.86rem;color:var(--text2);line-height:1.55;margin:0}
+.cookie-consent-text a{color:var(--accent)}
+.cookie-consent-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.cookie-consent-actions .btn{padding:.5rem 1.1rem;font-size:.8rem}
+@media(max-width:480px){
+  .cookie-consent-actions{width:100%}
+  .cookie-consent-actions .btn{flex:1;justify-content:center}
+}
