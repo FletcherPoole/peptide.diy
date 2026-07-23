@@ -2,6 +2,8 @@
 
 > Draft bullets only — not finished prose/HTML. en-GB spelling. Expand into HTML skeleton after sign-off.
 > Compound is INVESTIGATIONAL / not approved anywhere. Keep the safety-first framing hard throughout.
+> **Lead content = the house dosing model (weekly bands + own-comfort frequency).** Trial titration is kept as *research context*, not the primary instruction.
+> Labelling convention: **[HOUSE PROTOCOL]** = site owner's own guidance; *cited* = from a referenced trial/paper; **[ANECDOTAL]** = community/unverified. Educational, not medical advice.
 
 ---
 
@@ -12,7 +14,7 @@
 layout: default
 title: "Retatrutide 10mg"
 seo_title: "Retatrutide 10mg Protocol"
-description: "Retatrutide 10mg: 1mL BAC recon (10mg/mL), once-weekly SC, trial-based 2mg start titrated toward 8-12mg. Syringe units, supplies, cited sources."
+description: "Retatrutide 10mg house protocol: weekly dose bands (low 1-4mg, average 5-8mg, high 9-12mg), split across as many days as you tolerate. 10mg/mL recon, U-100 units, cited trial context."
 last_updated: 2026-07-23
 last_modified_at: 2026-07-23
 date_published: 2026-07-23
@@ -37,7 +39,7 @@ calc:
 ---
 ```
 
-- Note for reviewer: existing `retatrutide.html` is the 20mg page (noindex). Decide whether this 10mg page becomes the canonical/indexed one and the 20mg becomes the sibling, or keep both noindex given investigational status. Recommend: keep BOTH noindex until we're comfortable indexing an unapproved compound.
+- **noindex recommendation stands:** keep BOTH the 10mg and 20mg (`retatrutide.html`) pages `noindex` until we're comfortable indexing an unapproved compound. Do not index a house-dosing page for an investigational drug.
 
 ---
 
@@ -45,115 +47,132 @@ calc:
 - Breadcrumb: Single Peptides › Retatrutide 10mg
 - Eyebrow: "Single · Metabolic"
 - H1: **Retatrutide 10mg Dosage Protocol**
-- One-line intro: Investigational once-weekly triple-agonist (GLP-1 / GIP / glucagon) research peptide, LY3437943; subcutaneous. Reconstitution, syringe units and trial-based titration for a 10mg vial.
+- One-line intro: Investigational triple-agonist (GLP-1 / GIP / glucagon) research peptide, LY3437943; subcutaneous. House weekly dose bands, self-paced injection frequency, reconstitution and syringe units for a 10mg vial.
 - `{% include last-updated.html %}`
 
 ## 2. protocol-callout (callout warning) — LEAD WITH THIS, make it strong
-- **Research purposes only.** Not medical advice.
+- **Research purposes only. Educational, not medical advice.**
 - Retatrutide is **INVESTIGATIONAL**: not approved by the FDA, MHRA, EMA or any regulator anywhere. Still in clinical trials (Phase 3 TRIUMPH programme ongoing as of 2026).
 - **Long-term safety is unknown.** Human data limited to trial populations under medical supervision.
 - Systemic hormone-receptor agonist — affects appetite, blood glucose, heart rate. Do not treat like a local/cosmetic peptide.
-- Emphasise: slow titration, GI tolerability, heart-rate monitoring, medical supervision.
+- The dosing below is the **site's own house model**, not a regulator- or trial-defined regimen. Emphasise: start low, go slow, prioritise GI tolerability and heart-rate monitoring.
 
 ## 3. At a Glance (protocol-tldr)
-- **Vial:** 10mg lyophilised (focus of this page). Sibling research sizes: 15mg, 20mg (larger vials more economical once past titration — see note).
-- **Mix:** 1mL bacteriostatic water → **10 mg/mL** (recommended primary).
-  - Alt: 2mL BAC → 5 mg/mL for finer low-dose resolution / less crowded units at 2–4mg. Trade-off: high doses need larger volumes.
-- **Dose:** once-weekly SC. Trial-based: **start 2mg/week**, titrate up every 4 weeks toward **8–12mg** maintenance over ~3 months.
-- **Cycle:** continuous while researching; no fixed "off" — titration-led. (Trials ran 48–80 weeks.)
+- **Vial:** 10mg lyophilised (focus of this page). Sibling research sizes: 15mg, 20mg (larger vials more economical once past the low bands — see note).
+- **Mix:** 1mL bacteriostatic water → **10 mg/mL** (recommended primary). 1 U-100 unit = 0.1 mg = **100 mcg**.
+  - Alt: 2mL BAC → **5 mg/mL** for finer low-dose / daily-split resolution (see Alternative concentration).
+- **Dose — [HOUSE PROTOCOL] weekly bands:**
+  - **Low:** 1–4 mg (1000–4000 mcg) / week
+  - **Average:** 5–8 mg (5000–8000 mcg) / week
+  - **High:** 9–12 mg (9000–12000 mcg) / week
+- **Frequency — [HOUSE PROTOCOL]:** divide the weekly dose across **as many days as you're comfortable with**. Not fixed to once-weekly. (See Frequency philosophy.)
 - **Route:** subcutaneous only (abdomen/thigh/upper arm; rotate sites).
-- **Consider:** starting even lower (1mg) if GI-sensitive; a 10mg vial does NOT cover long maintenance — budget for 20mg vials at 8–12mg/week.
+- **Vial longevity:** a 10mg vial = 10mg total → covers the whole low band for a week or two, but the average/high bands burn through it fast. Budget 20mg vials for sustained average/high dosing.
 - Sibling vial: [Retatrutide 20mg](/retatrutide.html).
 
-## 4. Cycle
-- Intro: mark as **trial-derived titration** (Jastreboff Phase 2, NEJM 2023) — this is the cited backbone, not anecdote.
-- Standard titration table (assumes 1mL recon = 10 mg/mL):
+## 4. House Dosing Model — [HOUSE PROTOCOL] (make this the primary dosing section)
 
-| Phase | Weekly dose | Volume | U-100 units |
-|-------|-------------|--------|-------------|
-| Weeks 1–4 | 2 mg | 0.20 mL | 20 units |
-| Weeks 5–8 | 4 mg | 0.40 mL | 40 units |
-| Weeks 9–12 | 6 mg | 0.60 mL | 60 units |
-| Weeks 13+ (maintenance) | 8 mg | 0.80 mL | 80 units |
-| Advanced (optional) | 12 mg | 1.20 mL | 120 units — exceeds a 10mg vial; needs 20mg vial + possible split injection |
+### 4a. Weekly dose bands
+- **Low:** 1–4 mg (1000–4000 mcg) / week
+- **Average:** 5–8 mg (5000–8000 mcg) / week
+- **High:** 9–12 mg (9000–12000 mcg) / week
+- Start in the **low band** and only move up when the current dose is well tolerated. These are weekly *totals* — how you split them across the week is the next decision.
 
-- **Vial longevity note (critical, be honest):** A 10mg vial = 10mg total. At 2mg/week it lasts ~5 weeks; at 8mg/week only ~1.25 weeks. So the 10mg vial suits the **early titration phase**; maintenance at 8–12mg/week is far more practical from 20mg vials.
-- Escalate only if the prior step is well tolerated. Hold or step back a level if GI effects are significant.
+### 4b. Frequency philosophy — [HOUSE PROTOCOL]
+- Divide your weekly dose across **as many days as you're comfortable with**.
+- The goal is to find an injection frequency that **minimises side effects**.
+- **If you get intolerable side effects:** keep the weekly dose unchanged and **increase the frequency** (spread the same total over more, smaller injections).
+- **If you're already injecting daily and side effects are still intolerable:** then **lower the weekly dose**.
+- So the decision order is: pick a band → spread over more days before cutting dose → only cut dose once daily still isn't tolerable.
 
-## 5. Supplies
-- supply-grid (4 cards), sized for early titration cycle:
-  - **Vials:** Retatrutide 10mg × quantity (more for maintenance — see longevity note)
-  - **BAC water:** bacteriostatic water (0.9% benzyl alcohol) — 1mL per 10mg vial
-  - **Syringes:** U-100 insulin syringes (0.5mL/50u or 1mL/100u; 29–31G). Note 12mg dose > 100u won't fit one 1mL syringe.
-  - **Swabs:** alcohol prep pads
-- supply-footnote: quantities scale with dose/duration; titration burns vials fast at higher doses.
-- General supplies `<ul>`: sharps bin, storage (fridge 2–8°C), optional glass mixing vial for aliquoting.
+### 4c. Conversions — weekly band → per-injection at 10 mg/mL
+- **Concentration:** 10 mg/mL, so **1 U-100 unit = 0.1 mg = 100 mcg**.
+- **Formula:** `per-injection dose (mg) = weekly dose (mg) ÷ number of injections`; `volume (mL) = per-injection dose (mg) ÷ 10`; `U-100 units = volume (mL) × 100` (equivalently `units = per-injection mg × 10`).
 
-## 6. Dosing & Reconstitution
-- **Reconstitution (recommended):**
-  - 10mg vial + **1.0 mL** BAC water = **10 mg/mL** (10,000 mcg/mL).
+- **Daily split (÷7)** at 10 mg/mL:
+
+| Band | Weekly | Per-injection dose | Volume | U-100 units |
+|------|--------|--------------------|--------|-------------|
+| Low | 1–4 mg | 0.14–0.57 mg | 0.014–0.057 mL | ~1.4–5.7 u |
+| Average | 5–8 mg | 0.71–1.14 mg | 0.071–0.114 mL | ~7.1–11.4 u |
+| High | 9–12 mg | 1.29–1.71 mg | 0.129–0.171 mL | ~12.9–17.1 u |
+
+- **Twice-weekly split (÷2)** at 10 mg/mL:
+
+| Band | Weekly | Per-injection dose | Volume | U-100 units |
+|------|--------|--------------------|--------|-------------|
+| Low | 1–4 mg | 0.5–2 mg | 0.05–0.20 mL | 5–20 u |
+| Average | 5–8 mg | 2.5–4 mg | 0.25–0.40 mL | 25–40 u |
+| High | 9–12 mg | 4.5–6 mg | 0.45–0.60 mL | 45–60 u |
+
+- **⚠ Too-small-to-measure flag:** on a **daily split at 10 mg/mL**, the bottom of the low band is impractical — **1 mg/week ÷ 7 ≈ 1.4 units (0.014 mL)** and 2 mg/week ÷ 7 ≈ 2.9 units. Anything under ~2 units is very hard to draw accurately on a U-100 syringe. For low-band **daily** dosing either:
+  - switch to the **5 mg/mL** recon (doubles the unit count for the same dose — see Alternative concentration), or
+  - use **fewer split days** (e.g. twice-weekly, which puts the low band at a comfortable 5–20 units).
+- All other band/split combinations above sit in a comfortably measurable range on a U-100 syringe.
+- **1mL syringe ceiling:** the very top of the high band as a *single* weekly shot would be 12 mg = 1.20 mL = 120 u, which exceeds one 1mL/100u syringe — another reason the high band should be split, not given as one injection.
+
+## 5. Reconstitution & concentration
+- **Recommended recon:**
+  - 10mg vial + **1.0 mL** BAC water = **10 mg/mL** (10,000 mcg/mL). 1 U-100 unit = 0.1 mg.
   - Numbered steps: (1) draw 1mL BAC; (2) inject slowly down inner vial wall, not onto powder; (3) swirl gently — do NOT shake; (4) let dissolve to clear; (5) refrigerate.
   - Stability: reconstituted 2–8°C, use within ~28 days; do not freeze reconstituted solution. Lyophilised: −20°C long-term.
   - Link Storage Guide.
-- **Injectable dosing table** `Level | Weekly dose | Volume | U-100 units | Approx doses per 10mg vial`:
-
-| Level | Weekly dose | Volume (10mg/mL) | U-100 units | Doses per 10mg vial |
-|-------|-------------|------------------|-------------|---------------------|
-| Start | 2 mg | 0.20 mL | 20 u | ~5 |
-| Step 2 | 4 mg | 0.40 mL | 40 u | ~2.5 |
-| Step 3 | 6 mg | 0.60 mL | 60 u | ~1.6 |
-| Maintenance | 8 mg | 0.80 mL | 80 u | ~1.25 |
-| Advanced | 12 mg | 1.20 mL | 120 u | <1 (needs larger vial) |
-
-- **Formula:** `volume (mL) = weekly dose (mg) ÷ concentration (mg/mL)`; `U-100 units = volume (mL) × 100`.
-- **Worked example:** 4mg dose ÷ 10 mg/mL = 0.40 mL → ×100 = **40 units** on a U-100 syringe.
+- **Alternative concentration — 5 mg/mL (for finer low-dose / daily splitting):**
+  - 10mg vial + **2.0 mL** BAC water = **5 mg/mL** (5,000 mcg/mL). Now **1 U-100 unit = 0.05 mg = 50 mcg**, so every dose reads as **double the units** vs 10 mg/mL.
+  - `volume (mL) = per-injection dose (mg) ÷ 5`; `units = per-injection mg × 20`.
+  - Worked benefit: low-band **daily** 1 mg/week ÷ 7 = 0.143 mg → at 5 mg/mL that's **~2.9 u** (vs 1.4 u at 10 mg/mL) — measurable, if still small. Prefer this recon (or fewer split days) whenever the 10 mg/mL units fall below ~2.
+  - Trade-off: high-band doses need larger volumes at 5 mg/mL (e.g. high-band twice-weekly 6 mg = 1.20 mL = 120 u → exceeds a 1mL syringe). Pick concentration to suit the band you're actually running.
 - callout → "Open this 10mg vial in the calculator" (calc block: injection / 10 / mg / 1mL bac).
 
-## 7. Alternative Protocols
-- **Lower/slower start (anecdotal):** 1mg/week for 2–4 weeks before the 2mg step for GI-sensitive users.
-- **2mL recon variant:** 5 mg/mL → 2mg = 0.40mL/40u (finer resolution, easier micro-dosing). Mark as practical option.
-- **Larger vials for maintenance:** 20mg vial at 2mL → 10 mg/mL keeps the same unit maths but lasts longer. Mark clearly.
-- **Not recommended:** stacking with other GLP-1/GIP agonists (tirzepatide, semaglutide) — additive GI + heart-rate load, no data. Flag as anecdotal/discouraged.
+## 6. Supplies
+- supply-grid (4 cards):
+  - **Vials:** Retatrutide 10mg × quantity (more for sustained average/high bands — see longevity note)
+  - **BAC water:** bacteriostatic water (0.9% benzyl alcohol) — 1mL per 10mg vial (or 2mL for the 5 mg/mL recon)
+  - **Syringes:** U-100 insulin syringes (0.5mL/50u or 1mL/100u; 29–31G). Note high-band single shots >100u won't fit one 1mL syringe — split.
+  - **Swabs:** alcohol prep pads
+- supply-footnote: quantities scale with band and split frequency; the average/high bands burn vials fast.
+- General supplies `<ul>`: sharps bin, storage (fridge 2–8°C), optional glass mixing vial for aliquoting.
 
-## 8. What Is Retatrutide
+## 7. What Is Retatrutide
 - LY3437943, Eli Lilly. Single-molecule **triple agonist**: GLP-1 + GIP + **glucagon** receptors ("triple G").
 - Glucagon-receptor arm adds energy expenditure/hepatic-fat effects on top of the appetite/glycaemic effects — distinguishes it from tirzepatide (GLP-1/GIP dual) and semaglutide (GLP-1 mono).
 - Research focus: obesity, type 2 diabetes, MASLD/steatotic liver disease, osteoarthritis/knee (Phase 3).
 - **Data maturity:** Phase 2 complete (obesity NEJM 2023; T2D Lancet 2023); Phase 3 TRIUMPH programme ongoing/reporting 2026. Positive topline Phase 3 obesity data but **no regulatory approval anywhere yet**.
 
-## 9. Supplementary Notes
-- **Side effects (systemic):** GI-dominant — nausea, vomiting, diarrhoea, constipation, decreased appetite; dose-dependent, worst during escalation, ease at maintenance. Slow titration is the main mitigation.
-- **Heart rate:** dose-dependent increase (mean ~+3–4 bpm at 12mg in trials), peaked ~24 weeks then declined — monitor; glucagon-agonism related.
-- **Glycaemia:** can lower blood glucose; hypoglycaemia risk higher if combined with insulin/sulfonylureas (context: not medical advice).
-- **Theoretical class risk:** rodent thyroid C-cell tumours seen with GLP-1 agonists; human relevance unknown. Contraindicated framing for personal/family history of medullary thyroid carcinoma or MEN2.
-- **Interactions:** delays gastric emptying — can affect absorption of other orals.
-- Combinations: none evidenced; treat any stack as anecdotal and higher-risk.
-
-## 10. Research (cited, linked)
+## 8. Research (cited, linked) — includes trial titration as *context*
+- **Trial titration (context, not the house instruction):** the pivotal Phase 2 obesity trial (Jastreboff, NEJM 2023) dosed **once-weekly** and escalated over ~12 weeks — started at **2mg or 4mg/week**, stepped up every 4 weeks toward **8–12mg** maintenance. The lower **2mg start reduced GI events** vs a 4mg start. This is where the "start low, go slow" logic comes from; the house model above generalises it into weekly bands and lets you split the weekly total across more days for tolerability rather than being locked to a single weekly shot. *cited.*
+  - For reference, that trial's weekly-equivalent maintenance (8–12mg) maps onto the house **average/high** bands.
 - **Obesity efficacy (headline):** Jastreboff et al., *NEJM* 2023 — Phase 2, 338 adults, 48 weeks. Mean weight loss dose-dependent: 1mg −8.7%, 4mg −17.1%, 8mg −22.8%, **12mg −24.2%** at 48 weeks (placebo −2.1%). ≥5% loss reached by 92/100/100% at 4/8/12mg. https://pubmed.ncbi.nlm.nih.gov/37366315/
-- **Titration/tolerability:** trial started 2mg or 4mg and escalated every 4 weeks up to 12 weeks; lower 2mg start reduced GI events vs 4mg start — basis for the 2mg-start schedule here.
 - **Type 2 diabetes:** Rosenstock et al., *Lancet* 2023 — Phase 2, HbA1c reductions ~1.3–2.0% plus weight loss. https://pubmed.ncbi.nlm.nih.gov/37385280/
 - **MASLD / liver:** Phase 2a randomised trial — hepatic steatosis reduction. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11271400/
 - **Mechanism/discovery (preclinical):** Coskun et al., *Cell Metabolism* 2022. https://pubmed.ncbi.nlm.nih.gov/35985340/
 - **Phase 3 (2026):** TRIUMPH-1 topline — up to ~28–30% average weight loss at 80 weeks; endpoints met; still pre-approval. https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html
 - **Registry:** ClinicalTrials.gov NCT04881760. https://clinicaltrials.gov/study/NCT04881760
-- End with callout: "Research vs anecdote" — efficacy/titration numbers are from Lilly-sponsored trials in supervised populations; self-directed research use is unstudied.
+- End with callout: "Research vs anecdote vs house model" — efficacy/titration numbers are from Lilly-sponsored trials in supervised populations; the weekly bands and split-frequency approach are the site's **[HOUSE PROTOCOL]**; self-directed research use is unstudied.
 
-## 11. Beyond Weight Loss
-- **Type 2 diabetes / glycaemic control**
-  - *Research:* Rosenstock 2023 Lancet — meaningful HbA1c drops (cited above).
-  - *Anecdotal:* community reports of appetite/glucose changes — unverified, label as anecdote.
-- **Liver / metabolic (MASLD)**
-  - *Research:* Phase 2a steatosis reduction (cited above).
-  - *Anecdotal:* n/a robust — do not overstate.
-- **Osteoarthritis / knee pain**
-  - *Research:* Phase 3 signalled OA-pain relief alongside weight loss (2026 topline) — early, cited to press release pending peer-reviewed publication.
-  - *Anecdotal:* none reliable.
+## 9. Safety & Supplementary Notes
+- **Side effects (systemic):** GI-dominant — nausea, vomiting, diarrhoea, constipation, decreased appetite; dose-dependent, worst during escalation, ease at steady dosing. *cited (NEJM Phase 2).* House mitigation: spread the weekly total over more injection days before cutting the dose (see Frequency philosophy).
+- **Heart rate:** dose-dependent increase (mean ~+3–4 bpm at 12mg in trials), peaked ~24 weeks then declined — monitor; glucagon-agonism related. *cited.*
+- **Glycaemia:** can lower blood glucose; hypoglycaemia risk higher if combined with insulin/sulfonylureas. Educational, not medical advice.
+- **Theoretical class risk:** rodent thyroid C-cell tumours seen with GLP-1 agonists; human relevance unknown. Contraindicated framing for personal/family history of medullary thyroid carcinoma or MEN2. *class caution.*
+- **Interactions:** delays gastric emptying — can affect absorption of other orals.
+- **Stacking:** combining with other GLP-1/GIP agonists (tirzepatide, semaglutide) adds GI + heart-rate load with no data. **[ANECDOTAL]** / discouraged.
 
-## 12. References (grouped, for HTML ol.ref-list)
+## 10. FAQ (house voice)
+
+- **"Does it kill appetite / make me nauseous?"** — [HOUSE PROTOCOL] Yes, partly — that's part of how it works. Less appetite → less caloric intake → more weight loss (basic thermodynamics). If nausea is intolerable, **dose more frequently** (same weekly total, more days) rather than pushing through it. If it's still too much, consider switching to **Cagrilintide, Mazdutide, Semaglutide, Survodutide, or Tirzepatide**.
+
+- **"I'm still hungry. What should I do?"** — [HOUSE PROTOCOL] The reta is still working — you're still getting the metabolism / mitochondrial benefits even when your appetite isn't fully suppressed. But if you **out-eat** those benefits you won't lose the fat you're after. Options: **increase your retatrutide dose** (move up a band, when tolerated), **add Cagrilintide**, or **switch to Cagrilintide** entirely.
+
+- **"How is this different from other GLP-1s?"** — [HOUSE PROTOCOL] It appears **far stronger at reducing fat while maintaining muscle** than the others. On average its **appetite suppression seems weaker mg-for-mg**. It also **raises basal metabolic rate and mitochondrial efficiency**, which contributes to more successful fat loss. (Efficacy magnitudes referenced in the Research section are *cited*; the mg-for-mg comparison framing here is house opinion.)
+
+- **"How do I split my weekly dose?"** — [HOUSE PROTOCOL] Divide the weekly band total across as many days as you're comfortable with. More days = smaller, gentler injections. See the conversion tables for the exact units per injection at 10 mg/mL (or 5 mg/mL for the low band on a daily split).
+
+## 11. References (grouped, for HTML ol.ref-list)
 - **Efficacy / trials:** Jastreboff 2023 NEJM (37366315); Rosenstock 2023 Lancet (37385280); MASLD Phase 2a (PMC11271400); TRIUMPH-1 topline (PRNewswire 2026); NCT04881760.
 - **Mechanism:** Coskun 2022 Cell Metabolism (35985340).
 - **Safety / titration:** covered within trial refs; heart-rate + GI from NEJM Phase 2.
+- **House model:** weekly bands + split-frequency approach are the site owner's own [HOUSE PROTOCOL], not from a cited source.
 - **Storage / injection technique:** standard SC-technique + peptide-storage refs (align with site's shared reference block).
 - `{% include protocol-footer.html %}`
 

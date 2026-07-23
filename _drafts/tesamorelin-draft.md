@@ -49,6 +49,17 @@ calc:
 
 ---
 
+## [HOUSE VIEW] — read this first (house-verdict callout)
+
+- **Editorial note, distinct from the cited clinical data below.** This is the site owner's candid take, not a research finding. The trial evidence in sections 8–10 stands on its own; read both and decide for yourself. *Educational, not medical advice.*
+- **The house verdict:** anyone who tells you tesamorelin will do crazy things for fat loss or muscle growth is mostly lying. In our view it is **inferior to Ipamorelin / Hexarelin in every measurable way**. Sermorelin has the same problem — overhyped and under-delivers.
+- **What we'd actually run:** use **Ipamorelin** or **Hexarelin** instead. For best results, just use **HGH**.
+- **The one honest selling point:** most users report disproportionate **abdominal / visceral fat loss** — and yes, the RCT data below back this up for the specific approved use. But *every* HGH-axis peptide drives midsection fat loss, and several do it with **fewer side effects** than tesamorelin — namely **HGH**, **HGH FRAG 176-191**, and **AOD-9604**.
+- **The counterpoint we won't bury:** tesamorelin is the **one GHRH analog with FDA approval plus randomised placebo-controlled visceral-fat data** (Falutz phase-3 trials, section 8). For that narrow use — reducing visceral abdominal fat, especially HIV-associated lipodystrophy — it is the most *evidenced* option on this list. Skepticism about the hype, credit where the trials earn it.
+- Full reasoning and the "just use X instead" logic sit in **§11 FAQ / House verdict** below.
+
+---
+
 ## 1. At a Glance (protocol-tldr)
 
 - **Vial:** 10mg lyophilised tesamorelin (multi-dose research vial). *Note: pharmaceutical Egrifta SV is supplied as small single-use 2mg vials — the 10mg research vial is a convenience format, not the licensed presentation.*
@@ -217,6 +228,36 @@ calc:
 - LiverTox (NIH NIDDK). — https://www.ncbi.nlm.nih.gov/books/NBK548730/
 - Mayo Clinic drug information. — https://www.mayoclinic.org/drugs-supplements/tesamorelin-subcutaneous-route/description/drg-20074632
 - MedlinePlus. — https://medlineplus.gov/druginfo/meds/a611035.html
+
+---
+
+## 11. FAQ / House verdict
+
+> *[HOUSE VIEW] — the site owner's candid, opinionated take. It is deliberately kept separate from the cited clinical evidence in §8–§10. Educational, not medical advice.*
+
+- **Is tesamorelin a "crazy" fat-loss or muscle-building peptide?**
+  - No. Anyone who tells you it will do crazy things for fat loss or muscle growth is mostly lying. In our view it is inferior to **Ipamorelin** and **Hexarelin** in every measurable way. **Sermorelin** shares the problem — overhyped and under-delivers.
+
+- **So what should I use instead?**
+  - Use **Ipamorelin** or **Hexarelin** (GH secretagogues / ghrelin-mimetics — cleaner, in our experience, for the same GH-axis goal). For best results, just use **HGH** directly. Tesamorelin only stimulates *your own* GH; HGH is the thing itself.
+
+- **Does tesamorelin have any unique benefit?**
+  - The one thing users consistently report is **disproportionate abdominal ("visceral") fat loss** — and this is the part the clinical data actually support (see §8, Falutz trials). But be clear-eyed: **all** HGH-axis peptides do this to some degree, and several do it with **fewer side effects** than tesamorelin — **HGH**, **HGH FRAG 176-191**, and **AOD-9604** among them. So the "unique" benefit isn't really unique; it's just the best-documented.
+
+- **Then why does tesamorelin get any credit here at all?**
+  - Because honesty cuts both ways. Tesamorelin is the **only GHRH analog with FDA approval and randomised placebo-controlled human trial data** for visceral-fat reduction (§8–§9). If your specific goal is reducing visceral abdominal fat — and especially HIV-associated lipodystrophy, its licensed use — it is the *most evidenced* choice on this page. We're skeptical of the marketing, not of the trials.
+
+- **Bottom line?**
+  - Overhyped for physique and "anti-ageing"; genuinely evidenced for visceral fat in a narrow clinical setting. If you're chasing general body composition, we'd reach for **Ipamorelin / Hexarelin / HGH** first. If you specifically want the option with the strongest RCT visceral-fat paper trail, that's tesamorelin.
+
+### Related peptides (cross-links)
+
+- **Ipamorelin** — our preferred pick over tesamorelin (GH secretagogue). *Site page: live — link `/ipamorelin-5mg.html`.*
+- **Hexarelin** — also preferred over tesamorelin (potent GHRP). *Site page: planned/may get a page — link when live.*
+- **Sermorelin** — another GHRH analog we consider overhyped/under-delivering, same criticism as tesamorelin. *Site page: may get a page.*
+- **CJC-1295 (no-DAC)** — common GHRH-analog stack partner. *Site page: live — link `/cjc-1295-no-dac-5mg.html`.*
+- **HGH (somatropin)** — "just use HGH" for best results; the exogenous hormone itself, not a secretagogue. *Site page: planned/may get a page.*
+- **HGH FRAG 176-191** and **AOD-9604** — HGH-fragment fat-loss options noted for driving abdominal fat loss with fewer side effects than tesamorelin. *Site pages: may get pages.*
 
 ---
 

@@ -128,16 +128,20 @@ calc:
 ### Local vs systemic (subQ)
 - **Systemic:** rotate sites (abdomen, thigh, upper arm) — general/gut/whole-body effects. Site of injection thought not to matter much for systemic action (anecdotal).
 - **Local:** inject subQ as close as practical to the injury (e.g. near a tendon/joint). Popular in community protocols; **not** validated in humans — animal work sometimes used intraperitoneal or intra-articular routes. Never inject into a joint space or tendon itself without clinical guidance.
+- **[HOUSE PROTOCOL]** Injecting subQ *closer to the injury* is slightly more effective — but the small benefit is often **not worth it.** Injecting directly around, say, an ankle injury is extremely risky (limited subQ tissue, tendons, nerves, vessels); a routine belly-fat subQ is usually the better choice. Reserve local injection for sites with easy, safe subQ access.
 
 ### Oral / capsule
 - BPC-157 is unusually stable in gastric acid — oral is plausibly active, especially for **gut** issues. Rodent gut studies used per-oral dosing (in drinking water).
 - Community oral dose: ~250-500mcg 1-3x/day (capsule or reconstituted liquid swallowed). Systemic absorption is lower/uncertain vs injection — best evidence is for local GI effect. Label **anecdotal** for extra-intestinal claims.
+- **[HOUSE PROTOCOL]** If you go the pill/oral route, use **double** the injectable amount to account for the lower absorption.
 
 ### Nasal
 - Nasal sprays marketed; no established dosing. Anecdotal, often mirrors oral/inject amounts. Flag as unvalidated.
+- **[HOUSE PROTOCOL]** Nasal spray can be dosed at the **same** amount as the subQ injection (unlike oral, which needs doubling).
 
 ### BPC-157 + TB-500 stack
 - Common connective-tissue "repair stack". Often 1:1 to 1:5 ratio; conservative start ~1mcg/kg/day combined. Cross-link → /stacks.html for full stack protocol and combined syringe maths.
+- **[HOUSE PROTOCOL]** House view: BPC-157 works noticeably better combined with **[TB-500](/tb-500-5mg.html)** and **KPV** (see the KPV-containing GLOW/KLOW blends). See the FAQ below for the full "better healing" and "maximal healing" combos.
 
 ---
 
@@ -151,7 +155,7 @@ calc:
 ---
 
 ## 9. Supplementary Notes
-- **Combinations (anecdotal):** TB-500 (thymosin β4) for connective tissue; GHK-Cu for skin/wound; sometimes paired with growth-hormone secretagogues — all community practice, not evidenced.
+- **Combinations (anecdotal):** [TB-500](/tb-500-5mg.html) (thymosin β4) for connective tissue; [GHK-Cu](/ghk-cu.html) for skin/wound; **KPV** (as in the GLOW / KLOW blends) for anti-inflammatory/gut support; sometimes paired with growth-hormone secretagogues such as [CJC-1295](/cjc-1295.html) DAC + [Ipamorelin](/ipamorelin.html) — all community practice, not evidenced. See the house combos and FAQ below.
 - **Rodent-to-human dose note:** animal studies commonly use ~10mcg/kg; naive body-surface-area conversion lands near ~150mcg for a large adult — human doses in community use (250-500mcg) are extrapolations, not clinically established.
 - **Toxicity ceiling:** animal studies report very high tolerability / minimal toxicity even at elevated doses — but this does **not** transfer as a human safety guarantee.
 - **Side effects (route-split):**
@@ -159,6 +163,12 @@ calc:
   - *Oral:* generally well-tolerated in reports; mild GI complaints possible.
   - *Nasal:* irritation, sneezing, coughing.
   - *General:* occasional reports of headache, lightheadedness, fatigue, nausea (anecdotal). Long-term human safety unknown; theoretical concern re: angiogenesis and tumours — unproven but cautioned.
+- **[HOUSE PROTOCOL / ANECDOTAL]** Generally very well tolerated. One rare reported side effect is **anhedonia / blunted mood**, which — in house experience — may be resolved with **Naltrexone**. Not medical advice; discuss any such medication with a clinician.
+
+### House combos [HOUSE PROTOCOL / ANECDOTAL]
+- BPC-157 is considered safe to combine with **any** peptide.
+- **For better healing:** add **[TB-500](/tb-500-5mg.html)**, **[GHK-Cu](/ghk-cu.html)**, and **KPV** (KPV features in the GLOW / KLOW blends).
+- **For maximal healing:** on top of the above, also add **[CJC-1295 DAC](/cjc-1295.html)** and **[Ipamorelin](/ipamorelin.html)** (growth-hormone secretagogue pairing).
 
 ---
 
@@ -207,6 +217,27 @@ calc:
 ### Other (skin, bone, systemic recovery)
 - **Research:** wound/skin and bone-healing rodent studies; broad cytoprotection theme.
 - **Anecdotal:** faster training recovery, wound healing — community reports.
+
+---
+
+## FAQ (house voice)
+
+> House guidance in the site owner's voice. **[HOUSE PROTOCOL / ANECDOTAL]** — not medical advice; nearly all efficacy evidence is preclinical (rodent/in-vitro, much from a single research group). See Research/References for what's actually cited.
+
+**Q: Can I safely combine this with…?**
+- BPC-157 is safe to combine with **any** peptide.
+- For **better healing**, consider combining with: (1) **[TB-500](/tb-500-5mg.html)**, (2) **[GHK-Cu](/ghk-cu.html)**, (3) **KPV** (as found in the GLOW / KLOW blends).
+- For **maximal healing**, also add: (4) **[CJC-1295 DAC](/cjc-1295.html)** and (5) **[Ipamorelin](/ipamorelin.html)**.
+
+**Q: How long until I start getting results?**
+- Sooner or later depending on your **genetic sensitivity**, the **severity & recency** of the injury, and **rehab efficacy** (physical therapy, stretching, chiropractic, etc.).
+- If you run a **high dose for 4 weeks** and notice no improvement, you may need **surgery** — or there's another underlying issue worth investigating.
+
+**Q: I heard this causes cancer. Is that true?**
+- **No** — but it may **accelerate existing** cancer/tumours.
+- Anything associated with growth is also associated with cancer; BPC-157's **angiogenesis** could contribute to "feeding" cancer cells that are *already there*.
+- The cancer cells must **already exist** for this to occur — if you do not have cancer, there is no risk on this basis.
+- *(House view. This mirrors the general theoretical angiogenesis/tumour caution noted in the safety section; long-term human data does not exist.)*
 
 ---
 
